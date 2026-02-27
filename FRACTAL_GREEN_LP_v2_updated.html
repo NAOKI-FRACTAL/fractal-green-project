@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRACTAL GREEN｜太陽光発電所オーナーの相談相手 酒井直樹</title>
+<meta name="description" content="O&M8年・EPC3年の現場経験を持つ第三者調査機関。工事・機器販売ゼロの完全中立立場から、太陽光発電所オーナーの資産をデータで守ります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════ */
+:root {
+  --fg:        #1A4731;
+  --fg-mid:    #2D7A4F;
+  --fg-light:  #E8F5EE;
+  --gold:      #B8973A;
+  --gold-pale: #F5EDD6;
+  --ink:       #1C1C18;
+  --ink-mid:   #4A4A44;
+  --ink-faint: #9A9A92;
+  --paper:     #F8F5EF;
+  --paper-2:   #EFEBE2;
+  --white:     #FFFFFF;
+
+  --serif-en: 'Cormorant Garamond', Georgia, serif;
+  --serif-jp: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
+  --sans:     'Noto Sans JP', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.hd {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 64px;
+  background: rgba(26,71,49,0.97);
+  border-bottom: 1px solid rgba(184,151,58,0.2);
+  backdrop-filter: blur(12px);
+}
+.hd-logo {
+  font-family: var(--serif-en);
+  font-size: 1.15rem; font-weight: 600;
+  letter-spacing: 0.12em; color: var(--white);
+  text-decoration: none;
+}
+.hd-logo span { color: var(--gold); }
+.hd-nav { display: flex; align-items: center; gap: 32px; }
+.hd-link {
+  font-size: 0.72rem; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-family: var(--sans); font-weight: 300;
+  transition: color 0.2s;
+}
+.hd-link:hover { color: var(--gold); }
+.hd-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--gold); color: var(--fg);
+  padding: 9px 22px; text-decoration: none;
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.1em; font-family: var(--sans);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.hd-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--fg);
+  position: relative;
+  display: flex; align-items: stretch;
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+/* 背景テクスチャ */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(45,122,79,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(184,151,58,0.08) 0%, transparent 60%);
+}
+
+/* グリッド線 */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 420px;
+  width: 100%; max-width: 1280px;
+  margin: 0 auto; padding: 0 48px;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-left { padding: 80px 0; }
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 36px;
+}
+.hero-eyebrow-line {
+  width: 32px; height: 1px; background: var(--gold);
+}
+.hero-eyebrow-text {
+  font-family: var(--sans); font-size: 0.65rem;
+  font-weight: 500; letter-spacing: 0.22em;
+  color: var(--gold); text-transform: uppercase;
+}
+
+.hero-h1 {
+  font-family: var(--serif-jp);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800; color: var(--white);
+  line-height: 1.45; margin-bottom: 28px;
+}
+.hero-h1 .accent {
+  position: relative; display: inline-block;
+}
+.hero-h1 .accent::after {
+  content: '';
+  position: absolute; left: 0; bottom: 2px; right: 0;
+  height: 3px; background: var(--gold); opacity: 0.7;
+}
+
+.hero-lead {
+  font-size: 0.9rem; line-height: 2.1;
+  color: rgba(255,255,255,0.68);
+  margin-bottom: 48px; max-width: 520px;
+  font-weight: 300;
+}
+.hero-lead strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+.hero-actions { display: flex; flex-direction: column; gap: 12px; max-width: 360px; }
+
+.btn-gold {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--gold); color: var(--fg);
+  padding: 17px 32px; text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.08em; font-family: var(--sans);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(184,151,58,0.35);
+}
+.btn-ghost {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.7);
+  padding: 15px 32px; text-decoration: none;
+  font-size: 0.82rem; letter-spacing: 0.06em; font-family: var(--sans);
+  font-weight: 300;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold); color: var(--gold);
+  background: rgba(184,151,58,0.06);
+}
+
+/* 右カード */
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(184,151,58,0.2);
+  padding: 44px 36px;
+  backdrop-filter: blur(4px);
+  align-self: center;
+}
+.hc-label {
+  font-family: var(--sans); font-size: 0.6rem;
+  font-weight: 500; letter-spacing: 0.25em;
+  color: var(--gold); margin-bottom: 28px;
+}
+.hc-stat { margin-bottom: 22px; }
+.hc-num {
+  font-family: var(--serif-en);
+  font-size: 3.2rem; font-weight: 600;
+  color: var(--white); line-height: 1;
+}
+.hc-num sup { font-size: 1.2rem; vertical-align: super; }
+.hc-desc { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.hc-rule { height: 1px; background: rgba(255,255,255,0.08); margin: 24px 0; }
+.hc-quals { font-size: 0.68rem; color: rgba(255,255,255,0.4); line-height: 2; font-family: var(--sans); }
+.hc-quals strong { color: rgba(255,255,255,0.65); display: block; margin-bottom: 4px; letter-spacing: 0.1em; }
+
+/* ═══════════════════════════════════════
+   SECTION COMMONS
+═══════════════════════════════════════ */
+.sec { padding: 112px 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+
+.sec-tag {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.sec-tag-line { width: 28px; height: 1px; background: var(--gold); }
+.sec-tag-text {
+  font-family: var(--sans); font-size: 0.62rem;
+  font-weight: 500; letter-spacing: 0.22em;
+  color: var(--gold); text-transform: uppercase;
+}
+.sec-h2 {
+  font-family: var(--serif-jp);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 700; color: var(--fg);
+  line-height: 1.55; margin-bottom: 20px;
+}
+.sec-h2-wh { color: var(--white); }
+.sec-body {
+  font-size: 0.88rem; line-height: 2.1;
+  color: var(--ink-mid); max-width: 600px; font-weight: 300;
+}
+.sec-body-wh { color: rgba(255,255,255,0.65); }
+.gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 28px; }
+
+/* ═══════════════════════════════════════
+   STORY SECTION
+═══════════════════════════════════════ */
+.story { background: var(--white); }
+
+.story-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* 左：タイムライン風 */
+.story-timeline { position: relative; padding-top: 8px; }
+
+.tl-item {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 0; margin-bottom: 0;
+}
+.tl-gutter {
+  display: flex; flex-direction: column; align-items: center;
+}
+.tl-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--fg-light); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0; position: relative; z-index: 1;
+}
+.tl-line {
+  width: 1px; flex: 1; min-height: 32px;
+  background: linear-gradient(var(--fg-light), transparent);
+  margin: 4px 0;
+}
+.tl-item:last-child .tl-line { display: none; }
+.tl-content { padding: 8px 0 32px 20px; }
+.tl-title {
+  font-family: var(--serif-jp); font-size: 0.92rem;
+  font-weight: 700; color: var(--fg); margin-bottom: 8px;
+}
+.tl-body { font-size: 0.8rem; color: var(--ink-mid); line-height: 1.9; font-weight: 300; }
+
+/* 強調引用 */
+.story-quote {
+  border-left: 3px solid var(--gold);
+  background: var(--gold-pale);
+  padding: 28px 28px 28px 32px;
+  margin-bottom: 36px;
+}
+.story-quote p {
+  font-family: var(--serif-jp); font-size: 1rem;
+  font-weight: 700; color: var(--fg); line-height: 1.9;
+}
+.story-quote .sq-num {
+  font-family: var(--serif-en); font-size: 3rem;
+  color: var(--gold); font-weight: 600; line-height: 1;
+  display: block; margin-bottom: 8px;
+}
+
+/* 右：テキスト */
+.story-text-block { padding-top: 4px; }
+.story-p {
+  font-size: 0.88rem; line-height: 2.2;
+  color: var(--ink-mid); margin-bottom: 20px; font-weight: 300;
+}
+.story-p:last-of-type { margin-bottom: 40px; }
+.story-sign {
+  border-top: 1px solid var(--paper-2);
+  padding-top: 28px;
+}
+.story-sign-role {
+  font-size: 0.65rem; letter-spacing: 0.18em;
+  color: var(--ink-faint); margin-bottom: 6px; font-family: var(--sans);
+}
+.story-sign-name {
+  font-family: var(--serif-jp); font-size: 1.5rem;
+  font-weight: 700; color: var(--fg); margin-bottom: 4px;
+}
+.story-sign-en {
+  font-family: var(--serif-en); font-size: 0.9rem;
+  color: var(--ink-faint); font-style: italic;
+}
+.story-sign-addr {
+  font-size: 0.72rem; color: var(--ink-faint);
+  margin-top: 8px; font-weight: 300;
+}
+
+/* ═══════════════════════════════════════
+   WHY SECTION
+═══════════════════════════════════════ */
+.why { background: var(--fg); position: relative; overflow: hidden; }
+.why::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(rgba(45,122,79,0.3), transparent 70%);
+  pointer-events: none;
+}
+
+.why-intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center; margin-bottom: 72px;
+}
+.why-intro-right {
+  font-size: 0.88rem; line-height: 2.1;
+  color: rgba(255,255,255,0.6); font-weight: 300;
+}
+
+.why-cards {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(184,151,58,0.15);
+  margin-bottom: 48px;
+}
+.why-card {
+  background: var(--fg); padding: 40px 32px;
+  transition: background 0.3s;
+}
+.why-card:hover { background: rgba(255,255,255,0.04); }
+.why-card-n {
+  font-family: var(--serif-en); font-size: 2.6rem;
+  color: rgba(184,151,58,0.4); font-weight: 600;
+  line-height: 1; margin-bottom: 20px;
+  transition: color 0.3s;
+}
+.why-card:hover .why-card-n { color: var(--gold); }
+.why-card-t {
+  font-family: var(--serif-jp); font-size: 0.95rem;
+  font-weight: 700; color: var(--white); margin-bottom: 12px;
+}
+.why-card-b { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 2; font-weight: 300; }
+
+.why-pledge {
+  border: 1px solid rgba(184,151,58,0.25);
+  background: rgba(184,151,58,0.04);
+  padding: 40px 48px; text-align: center;
+}
+.why-pledge p {
+  font-family: var(--serif-jp); font-size: 0.95rem;
+  color: rgba(255,255,255,0.82); line-height: 2.2;
+}
+.why-pledge strong { color: var(--gold); }
+
+/* ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ */
+.services { background: var(--paper); }
+
+.svc-grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 2px; margin-top: 64px;
+  background: var(--paper-2);
+}
+.svc-card {
+  background: var(--white); padding: 48px 40px;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+.svc-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--paper-2);
+  transition: background 0.3s;
+}
+.svc-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+.svc-card:hover::before { background: var(--gold); }
+.svc-card.lead::before { background: var(--gold); }
+
+.svc-phase {
+  font-family: var(--sans); font-size: 0.6rem;
+  font-weight: 500; letter-spacing: 0.2em;
+  color: var(--gold); margin-bottom: 12px;
+}
+.svc-title {
+  font-family: var(--serif-jp); font-size: 1.05rem;
+  font-weight: 700; color: var(--fg); margin-bottom: 14px;
+}
+.svc-price {
+  font-family: var(--serif-en); font-size: 1.8rem;
+  font-weight: 600; color: var(--fg); margin-bottom: 18px;
+}
+.svc-price small {
+  font-family: var(--sans); font-size: 0.75rem;
+  color: var(--ink-faint); font-weight: 300;
+}
+.svc-desc { font-size: 0.82rem; color: var(--ink-mid); line-height: 2; font-weight: 300; }
+.svc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 20px;
+  background: var(--fg-light); color: var(--fg);
+  padding: 5px 14px; font-size: 0.65rem;
+  font-family: var(--sans); font-weight: 500; letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════
+   CREDENTIALS
+═══════════════════════════════════════ */
+.creds { background: var(--white); }
+
+.creds-grid {
+  display: grid; grid-template-columns: 1fr 400px;
+  gap: 72px; align-items: start; margin-top: 64px;
+}
+.creds-list { list-style: none; }
+.creds-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 0; border-bottom: 1px solid var(--paper-2);
+  font-size: 0.88rem; color: var(--ink); font-weight: 300;
+  line-height: 1.7;
+}
+.creds-item:last-child { border-bottom: none; }
+.creds-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold); margin-top: 8px; flex-shrink: 0;
+}
+
+.exp-panel {
+  background: var(--fg); padding: 48px 36px; color: var(--white);
+}
+.exp-tag {
+  font-family: var(--sans); font-size: 0.6rem;
+  font-weight: 500; letter-spacing: 0.22em;
+  color: var(--gold); margin-bottom: 32px;
+}
+.exp-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px; }
+.exp-y {
+  font-family: var(--serif-en); font-size: 3.2rem;
+  font-weight: 600; color: var(--gold); line-height: 1;
+}
+.exp-detail {
+  font-size: 0.78rem; color: rgba(255,255,255,0.6);
+  line-height: 1.8; font-weight: 300;
+}
+.exp-rule { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
+.exp-note {
+  font-size: 0.75rem; color: rgba(255,255,255,0.4);
+  line-height: 1.9; font-weight: 300;
+}
+
+/* ═══════════════════════════════════════
+   FLOW
+═══════════════════════════════════════ */
+.flow { background: var(--paper-2); }
+
+.flow-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; margin-top: 64px; position: relative;
+}
+.flow-connector {
+  position: absolute; top: 28px; left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+.flow-step { padding: 0 24px; text-align: center; }
+.flow-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--fg); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif-en); font-size: 1.3rem; font-weight: 600;
+  margin: 0 auto 20px; position: relative; z-index: 1;
+}
+.flow-t {
+  font-family: var(--serif-jp); font-size: 0.88rem;
+  font-weight: 700; color: var(--fg); margin-bottom: 8px;
+}
+.flow-b { font-size: 0.75rem; color: var(--ink-faint); line-height: 1.9; font-weight: 300; }
+
+/* ═══════════════════════════════════════
+   CTA
+═══════════════════════════════════════ */
+.cta { background: var(--fg); padding: 112px 0; }
+
+.cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+
+.cta-h {
+  font-family: var(--serif-jp);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 700; color: var(--white);
+  line-height: 1.6; margin: 20px 0 16px;
+}
+.cta-sub {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  margin-bottom: 48px; font-weight: 300;
+}
+.cta-box {
+  border: 1px solid rgba(184,151,58,0.2);
+  background: rgba(255,255,255,0.03);
+  padding: 48px 40px;
+}
+.cta-box .btn-gold {
+  font-size: 0.92rem; padding: 19px 40px;
+  margin-bottom: 20px; width: 100%;
+}
+.cta-checklist {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 28px;
+}
+.cta-check {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.5); font-weight: 300;
+}
+.cta-check::before {
+  content: '✓'; color: var(--gold); font-weight: 600; flex-shrink: 0;
+}
+.cta-contact {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 24px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 2;
+}
+.cta-contact a { color: var(--gold); text-decoration: none; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: #0E1A13; padding: 40px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.ft-logo {
+  font-family: var(--serif-en); font-size: 1rem;
+  font-weight: 600; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+}
+.ft-logo span { color: var(--gold); }
+.ft-info {
+  font-size: 0.7rem; color: rgba(255,255,255,0.25);
+  text-align: right; line-height: 1.8; font-weight: 300;
+}
+
+/* ═══════════════════════════════════════
+   REVEAL ANIMATION
+═══════════════════════════════════════ */
+.rv {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.rv.on { opacity: 1; transform: none; }
+.rv-d1 { transition-delay: 0.1s; }
+.rv-d2 { transition-delay: 0.2s; }
+.rv-d3 { transition-delay: 0.3s; }
+.rv-d4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════ */
+@media (max-width: 960px) {
+  .hd { padding: 0 24px; }
+  .hd-nav .hd-link { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .hero-left { padding: 60px 0; }
+  .wrap { padding: 0 24px; }
+  .sec { padding: 72px 0; }
+  .story-grid,
+  .why-intro,
+  .creds-grid { grid-template-columns: 1fr; gap: 48px; }
+  .why-cards { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .flow-steps { grid-template-columns: repeat(2,1fr); gap: 40px; }
+  .flow-connector { display: none; }
+  footer { flex-direction: column; text-align: center; }
+  .ft-info { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ░░░ HEADER ░░░ -->
+<header class="hd">
+  <a href="#" class="hd-logo">FRACTAL <span>GREEN</span></a>
+  <nav class="hd-nav">
+    <a href="#story" class="hd-link">代表について</a>
+    <a href="#services" class="hd-link">サービス</a>
+    <a href="#flow" class="hd-link">ご利用の流れ</a>
+    <a href="#diagnosis" class="hd-btn">無料60秒診断</a>
+  </nav>
+</header>
+
+<!-- ░░░ HERO ░░░ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow rv">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Fractal Green — 太陽光発電所 安全基準適合調査</span>
+      </div>
+      <h1 class="hero-h1 rv rv-d1">
+        発電所、本当に<br>
+        <span class="accent">ちゃんと管理</span>されていますか？
+      </h1>
+      <p class="hero-lead rv rv-d2">
+        O&M<strong>8年</strong>・EPC<strong>3年</strong>、現場の内側にいたからこそ見えた現実。<br>
+        「オーナーに正確な情報が届いていない」という構造的な問題。<br>
+        <strong>工事は売りません。</strong>データと調査だけで、あなたの資産を守ります。
+      </p>
+      <div class="hero-actions rv rv-d3">
+        <a href="#diagnosis" class="btn-gold">▶ 無料60秒診断を受ける</a>
+        <a href="#story" class="btn-ghost">酒井直樹について知る →</a>
+      </div>
+    </div>
+    <div class="hero-card rv rv-d2">
+      <div class="hc-label">Founder Profile</div>
+      <div class="hc-stat">
+        <div class="hc-num">11<sup>年</sup></div>
+        <div class="hc-desc">O&M・EPCの現場経験</div>
+      </div>
+      <div class="hc-rule"></div>
+      <div class="hc-stat">
+        <div class="hc-num">7<sup>回</sup></div>
+        <div class="hc-desc">連続ケーブル盗難対応（同一発電所）</div>
+      </div>
+      <div class="hc-rule"></div>
+      <div class="hc-quals">
+        <strong>保有資格</strong>
+        第一種電気工事士<br>
+        1級電気施工管理技士補<br>
+        1級土木施工管理技術者<br>
+        登録電気工事事業者
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ STORY ░░░ -->
+<section class="story sec" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+
+      <!-- 左：体験タイムライン -->
+      <div class="rv">
+        <div class="story-quote">
+          <span class="sq-num">7</span>
+          <p>同じ発電所で、数ヶ月の間に<br>ケーブル盗難が<strong>7回</strong>起きました。</p>
+        </div>
+        <div class="story-timeline">
+          <div class="tl-item">
+            <div class="tl-gutter">
+              <div class="tl-icon">⚡</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">連続7回のケーブル盗難対応・対策工事</div>
+              <div class="tl-body">犯行グループは下見をして対策の穴を確認してから動く。場当たりの対処では追いつかないことを痛感した。その後の盗難対策工事の設計・施工管理まで担当。</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-gutter">
+              <div class="tl-icon">🏔</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">土砂災害による発電所崩壊の復旧</div>
+              <div class="tl-body">発電所の一部が崩壊した土砂災害の復旧工事。設計から施工管理まで全工程を担当。被害規模と保険対応の難しさを現場で学んだ。</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-gutter">
+              <div class="tl-icon">🌊</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">台風による発電所水没の復旧</div>
+              <div class="tl-body">台風被害で水没した発電所の復旧工事・施工管理を担当。初動の速さがオーナーごとに全く違った。事前に情報を持っているかどうかが決定的な差になった。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右：ストーリーテキスト -->
+      <div class="story-text-block rv rv-d1">
+        <div class="sec-tag">
+          <div class="sec-tag-line"></div>
+          <span class="sec-tag-text">Founder's Story</span>
+        </div>
+        <div class="gold-rule"></div>
+        <h2 class="sec-h2">「オーナーに、正確な情報が<br>届いていない」</h2>
+        <p class="story-p">11年間、O&MとEPCの現場にいました。発電所の管理側として、何度も修繕・復旧・緊急対応を経験しました。</p>
+        <p class="story-p">そこで毎回感じたのが同じ問題です。業者は報告書を出す。でも本当のリスクをわかりやすく伝える人間がいない。オーナーは「大丈夫だと思う」という感覚で資産を任せています。</p>
+        <p class="story-p">O&M会社は自分が管理するサイトしか見ない。施工業者は工事を売りたい。メーカーは自社設備だけを評価する。だれもオーナーの側に立って、フラットに発電所全体を見ていない。</p>
+        <p class="story-p">その空白を埋めるためにFRACTAL GREENを始めました。</p>
+        <div class="story-sign">
+          <div class="story-sign-role">FRACTAL GREEN 代表</div>
+          <div class="story-sign-name">酒井 直樹</div>
+          <div class="story-sign-en">Naoki Sakai</div>
+          <div class="story-sign-addr">福岡県田川市猪国2559（いいかねPalette内）</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ WHY ░░░ -->
+<section class="why sec">
+  <div class="wrap">
+    <div class="why-intro rv">
+      <div>
+        <div class="sec-tag">
+          <div class="sec-tag-line"></div>
+          <span class="sec-tag-text">Why Fractal Green</span>
+        </div>
+        <div class="gold-rule"></div>
+        <h2 class="sec-h2 sec-h2-wh">なぜ工事を<br>売らないのか</h2>
+      </div>
+      <p class="why-intro-right">工事や機器を販売する業者が「中立の立場でリスクを評価する」ことは構造的に不可能です。問題を見つければ工事提案になる。そこに利益相反が生まれます。11年間、売る側にいたからこそ、その構造を知っています。</p>
+    </div>
+    <div class="why-cards rv rv-d1">
+      <div class="why-card">
+        <div class="why-card-n">01</div>
+        <div class="why-card-t">完全中立の第三者</div>
+        <div class="why-card-b">工事・機器販売は一切行いません。調査結果がどうであれ、工事を提案することはありません。あなたの側に立って、事実だけをお伝えします。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-n">02</div>
+        <div class="why-card-t">データと根拠で話す</div>
+        <div class="why-card-b">気象データ・全国盗難統計・設備仕様データとの照合で根拠を明示します。「なぜそうなのか」を数字で伝えます。感覚ではなく、根拠で判断できる情報をお渡しします。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-n">03</div>
+        <div class="why-card-t">不安を煽らない</div>
+        <div class="why-card-b">「このままでは大変なことになる」という売り方はしません。現状を正確に把握し、優先順位をつけて、建設的な選択肢をお伝えします。</div>
+      </div>
+    </div>
+    <div class="why-pledge rv rv-d2">
+      <p>FRACTAL GREENは、<strong>工事・機器の販売による収益はゼロ</strong>です。<br>調査・レポート・コンサルティングの対価だけで成立するビジネスモデルを選びました。<br>それがオーナーの側に立ち続けるための、唯一の設計です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ SERVICES ░░░ -->
+<section class="services sec" id="services">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">
+        <div class="sec-tag-line"></div>
+        <span class="sec-tag-text">Services</span>
+      </div>
+      <div class="gold-rule"></div>
+      <h2 class="sec-h2">サービス内容</h2>
+    </div>
+    <div class="svc-grid rv rv-d1">
+      <div class="svc-card lead">
+        <div class="svc-phase">ENTRY — まず試す</div>
+        <div class="svc-title">無料60秒 盗難リスク診断</div>
+        <div class="svc-price">¥0 <small>/ 完全無料</small></div>
+        <div class="svc-desc">選択式8問。発電所の状況を入力するだけで、盗難リスクのスコアと現状評価が即時に表示されます。営業の連絡は一切ありません。まず現状を把握するところから始めてください。</div>
+        <span class="svc-badge">▶ 今すぐ始める</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-phase">CORE — 現地調査</div>
+        <div class="svc-title">安全基準適合調査レポート</div>
+        <div class="svc-price">¥50,000〜 <small>/ 1案件</small></div>
+        <div class="svc-desc">現地目視・写真記録・データ分析による第三者評価レポート。盗難リスク・設備劣化・O&M品質を数値化し、保険会社・金融機関への提出にも対応した正式ドキュメントとして発行します。</div>
+        <a href="survey_detail.html" class="svc-badge" style="display:inline-flex;text-decoration:none;">詳細・お申し込み →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-phase">ONGOING — 継続管理</div>
+        <div class="svc-title">定期モニタリング顧問契約</div>
+        <div class="svc-price">¥30,000〜 <small>/ 月</small></div>
+        <div class="svc-desc">月次で発電データ確認・O&M業者レポートの第三者チェック・横断サマリーレポートの提供。管理を業者に任せながら、独立した「見張り役」として機能します。</div>
+        <span class="svc-badge">月次継続</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-phase">EXIT — 出口対応</div>
+        <div class="svc-title">売却・融資・承継 DD対応</div>
+        <div class="svc-price">¥200,000〜 <small>/ 案件</small></div>
+        <div class="svc-desc">FIT終了・売却・リファイナンス・相続の際に必要な第三者評価レポート。買い手・銀行・税理士への説明資料として使える正式ドキュメントを発行します。</div>
+        <span class="svc-badge">要相談</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CREDENTIALS ░░░ -->
+<section class="creds sec">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">
+        <div class="sec-tag-line"></div>
+        <span class="sec-tag-text">Credentials</span>
+      </div>
+      <div class="gold-rule"></div>
+      <h2 class="sec-h2">資格と現場経験</h2>
+    </div>
+    <div class="creds-grid rv rv-d1">
+      <ul class="creds-list">
+        <li class="creds-item"><div class="creds-dot"></div>第一種電気工事士</li>
+        <li class="creds-item"><div class="creds-dot"></div>1級電気施工管理技士補</li>
+        <li class="creds-item"><div class="creds-dot"></div>1級土木施工管理技術者</li>
+        <li class="creds-item"><div class="creds-dot"></div>登録電気工事事業者</li>
+        <li class="creds-item"><div class="creds-dot"></div>所在地：福岡県田川市猪国2559（いいかねPalette内）</li>
+        <li class="creds-item"><div class="creds-dot"></div>TEL：080-3220-5866</li>
+        <li class="creds-item"><div class="creds-dot"></div>Mail：info@fractal-green-project.jp</li>
+      </ul>
+      <div class="exp-panel">
+        <div class="exp-tag">FIELD EXPERIENCE</div>
+        <div class="exp-row">
+          <div class="exp-y">8</div>
+          <div class="exp-detail">年間のO&M（運営管理）経験<br>盗難対応・災害復旧・緊急点検を含む</div>
+        </div>
+        <div class="exp-rule"></div>
+        <div class="exp-row">
+          <div class="exp-y">3</div>
+          <div class="exp-detail">年間のEPC（設計・施工）経験<br>施工管理・設計業務を担当</div>
+        </div>
+        <div class="exp-rule"></div>
+        <div class="exp-note">ケーブル盗難連続7回対応・土砂災害復旧・台風水没復旧など、通常のO&Mでは経験できない現場を複数経験。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FLOW ░░░ -->
+<section class="flow sec" id="flow">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <div class="sec-tag" style="justify-content:center">
+        <div class="sec-tag-line"></div>
+        <span class="sec-tag-text">How It Works</span>
+        <div class="sec-tag-line"></div>
+      </div>
+      <div class="gold-rule" style="margin:14px auto 0"></div>
+      <h2 class="sec-h2" style="margin-top:16px">ご利用の流れ</h2>
+    </div>
+    <div class="flow-steps rv rv-d1">
+      <div class="flow-connector"></div>
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-t">無料診断を受ける</div>
+        <div class="flow-b">60秒の選択式診断でリスクスコアを確認。営業の連絡はありません。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-t">無料相談（30分）</div>
+        <div class="flow-b">診断結果をもとにオンラインで現状確認。現地調査が必要かを判断します。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-t">現地調査・レポート</div>
+        <div class="flow-b">発電所へ訪問し写真記録・データ分析を実施。正式レポートを発行します。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-t">改善・継続管理</div>
+        <div class="flow-b">改善提案の実施後、継続的なモニタリング顧問としてサポートします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CTA ░░░ -->
+<section class="cta" id="diagnosis">
+  <div class="wrap">
+    <div class="cta-inner rv">
+      <div class="sec-tag" style="justify-content:center">
+        <div class="sec-tag-line"></div>
+        <span class="sec-tag-text">Free Diagnosis</span>
+        <div class="sec-tag-line"></div>
+      </div>
+      <h2 class="cta-h">まず、あなたの発電所の<br>本当の状態を確認してください。</h2>
+      <p class="cta-sub">60秒・選択式・完全無料。営業の連絡は一切ありません。</p>
+      <div class="cta-box">
+        <a href="solar_diagnosis.html" class="btn-gold">▶ 無料60秒 盗難リスク診断を始める</a>
+        <div class="cta-checklist">
+          <div class="cta-check">選択式8問・記述不要</div>
+          <div class="cta-check">結果は即時表示</div>
+          <div class="cta-check">工事・機器の営業は一切なし</div>
+        </div>
+        <div class="cta-contact">
+          個別相談・お問い合わせ<br>
+          <a href="mailto:info@fractal-green-project.jp">info@fractal-green-project.jp</a>
+          　／　<a href="tel:08032205866">080-3220-5866</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer>
+  <div class="ft-logo">FRACTAL <span>GREEN</span></div>
+  <div class="ft-info">
+    代表 酒井 直樹　福岡県田川市猪国2559（いいかねPalette内）<br>
+    info@fractal-green-project.jp　080-3220-5866<br>
+    © 2025 FRACTAL GREEN. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
