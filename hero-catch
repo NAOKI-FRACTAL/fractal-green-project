@@ -622,7 +622,7 @@ footer {
         <div class="hero-eyebrow-line"></div>
         <span class="hero-eyebrow-text">Fractal Green — 太陽光発電所 安全基準適合調査</span>
       </div>
-      <h1 class="hero-catch">
+      <h1 class="hero-catch" style="color:#ffffff;">
   O&Mは過去を見る。<br>
   事業者は未来を見る。<br>
   <em>FRACTAL GREENは「今」を可視化する。</em>
