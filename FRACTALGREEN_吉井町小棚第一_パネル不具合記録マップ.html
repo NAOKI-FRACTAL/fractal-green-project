@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吉井町小棚第一　パネル不具合記録マップ｜FRACTAL GREEN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',Arial,sans-serif;background:#f8f7f4;color:#1a1a1a;font-size:14px}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#fff;border-bottom:1px solid #e5e7eb;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:50}
+.top-title{font-size:13px;font-weight:700;color:#1a1a1a}
+.top-sub{font-size:11px;color:#6b7280;margin-top:2px}
+.legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.leg{display:flex;align-items:center;gap:4px;font-size:11px;color:#6b7280}
+.leg-dot{width:12px;height:12px;border-radius:2px;border:1px solid rgba(0,0,0,0.15)}
+.controls{display:flex;gap:6px;align-items:center;padding:8px 16px;background:#fff;border-bottom:1px solid #e5e7eb;flex-wrap:wrap}
+.mode-label{font-size:11px;color:#6b7280;margin-right:2px}
+.ctrl-btn{font-size:11px;padding:5px 12px;border:1px solid #d1d5db;border-radius:4px;cursor:pointer;background:#fff;color:#6b7280;transition:all 0.15s}
+.ctrl-btn:hover{background:#f3f4f6}
+.ctrl-btn.active{border-color:#227145;background:#e8f5ee;color:#227145;font-weight:600}
+.ctrl-btn.mode-fault.active{border-color:#dc2626;background:#fee2e2;color:#dc2626}
+.ctrl-btn.mode-check.active{border-color:#d97706;background:#fef3c7;color:#d97706}
+.ctrl-btn.mode-replaced.active{border-color:#16a34a;background:#dcfce7;color:#16a34a}
+.ctrl-btn.mode-normal.active{border-color:#2563eb;background:#dbeafe;color:#2563eb}
+.export-btn{font-size:11px;padding:5px 14px;border:1px solid #227145;border-radius:4px;cursor:pointer;background:#227145;color:#fff;margin-left:auto;font-weight:600}
+.export-btn:hover{background:#1a5c38}
+.reset-btn{font-size:11px;padding:5px 12px;border:1px solid #d1d5db;border-radius:4px;cursor:pointer;background:#fff;color:#6b7280}
+.main{padding:12px 16px;max-width:1200px;margin:0 auto}
+.pcs-block{margin-bottom:12px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff}
+.pcs-header{padding:7px 14px;font-size:12px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.pcs-body{padding:8px 10px}
+.box-section{margin-bottom:6px}
+.box-label{font-size:10px;font-weight:600;color:#6b7280;margin-bottom:3px;padding-left:2px}
+.circuits{display:flex;flex-direction:column;gap:2px}
+.circuit-row{display:flex;align-items:center;gap:3px}
+.circ-no{font-size:9px;color:#9ca3af;min-width:16px;text-align:right;padding-right:2px}
+.panels{display:flex;gap:1px}
+.panel{width:15px;height:15px;border-radius:1px;cursor:pointer;border:0.5px solid rgba(0,0,0,0.1);transition:transform 0.1s;position:relative;-webkit-tap-highlight-color:transparent}
+.panel:hover,.panel:active{transform:scale(1.4);z-index:10}
+.panel.normal{background:#BFDBFE}
+.panel.fault{background:#FCA5A5;border-color:rgba(220,38,38,0.3)}
+.panel.replaced{background:#86EFAC;border-color:rgba(22,163,74,0.3)}
+.panel.check{background:#FDE68A;border-color:rgba(217,119,6,0.3)}
+.panel.unmeasured{background:#e5e7eb}
+.stats-bar{display:flex;gap:16px;padding:8px 16px;border-top:1px solid #e5e7eb;background:#fff;flex-wrap:wrap;position:sticky;bottom:0}
+.stat{font-size:12px;color:#6b7280}
+.stat b{font-weight:700}
+.fault-section{background:#fff;border-top:1px solid #e5e7eb;padding:16px}
+.fault-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;padding:5px 10px;background:#f3f4f6;color:#6b7280;border-bottom:1px solid #e5e7eb;font-weight:600}
+td{padding:5px 10px;border-bottom:1px solid #f3f4f6;color:#1a1a1a}
+tr:hover td{background:#f9fafb}
+.memo-input{width:100%;font-size:11px;padding:2px 6px;border:1px solid #e5e7eb;border-radius:3px;font-family:inherit}
+.tooltip{position:fixed;background:#1a1a1a;border-radius:4px;padding:5px 10px;font-size:10px;color:#fff;pointer-events:none;z-index:200;display:none;white-space:nowrap;transform:translateX(-50%)}
+.no-print{} 
+@media print{
+  .controls,.tooltip{display:none!important}
+  .top-bar{position:static}
+  .stats-bar{position:static}
+  body{background:#fff}
+}
+.print-note{font-size:10px;color:#9ca3af;padding:8px 16px;text-align:center;background:#fff;border-top:1px solid #f3f4f6}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div>
+    <div class="top-title">FRACTAL GREEN　吉井町小棚第一太陽光発電所　パネル不具合記録マップ</div>
+    <div class="top-sub">4,720枚　16直列×295回路　PCS1〜5　単線結線図（NEO800314-002〜004）準拠</div>
+  </div>
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:#BFDBFE"></div>正常</div>
+    <div class="leg"><div class="leg-dot" style="background:#FCA5A5"></div>不具合</div>
+    <div class="leg"><div class="leg-dot" style="background:#86EFAC"></div>交換済</div>
+    <div class="leg"><div class="leg-dot" style="background:#FDE68A"></div>要確認</div>
+    <div class="leg"><div class="leg-dot" style="background:#e5e7eb"></div>未測定</div>
+  </div>
+</div>
+
+<div class="controls no-print">
+  <span class="mode-label">記録モード:</span>
+  <button class="ctrl-btn mode-unmeasured active" onclick="setMode('unmeasured',this)" id="btn-unmeasured">未測定</button>
+  <button class="ctrl-btn mode-normal" onclick="setMode('normal',this)" id="btn-normal">正常</button>
+  <button class="ctrl-btn mode-fault" onclick="setMode('fault',this)" id="btn-fault">不具合</button>
+  <button class="ctrl-btn mode-check" onclick="setMode('check',this)" id="btn-check">要確認</button>
+  <button class="ctrl-btn mode-replaced" onclick="setMode('replaced',this)" id="btn-replaced">交換済</button>
+  <button class="reset-btn" onclick="resetAll()">全リセット</button>
+  <button class="export-btn" onclick="showFaultList()">不具合一覧を表示／印刷</button>
+</div>
+
+<div class="main" id="main"></div>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat">総パネル: <b id="st-total">4,720</b>枚</div>
+  <div class="stat">未測定: <b id="st-um" style="color:#6b7280">4,720</b>枚</div>
+  <div class="stat">正常: <b id="st-ok" style="color:#2563eb">0</b>枚</div>
+  <div class="stat" style="color:#dc2626">不具合: <b id="st-fault">0</b>枚</div>
+  <div class="stat" style="color:#d97706">要確認: <b id="st-check">0</b>枚</div>
+  <div class="stat" style="color:#16a34a">交換済: <b id="st-rep">0</b>枚</div>
+  <div class="stat" style="margin-left:auto">
+    <button class="reset-btn no-print" onclick="window.print()" style="font-size:10px">印刷</button>
+  </div>
+</div>
+
+<div id="fault-section" style="display:none" class="fault-section">
+  <div class="fault-title">不具合・要確認パネル一覧　（業者提出用）</div>
+  <table>
+    <thead>
+      <tr><th>No.</th><th>PCS</th><th>接続箱</th><th>回路No.</th><th>パネル番号</th><th>状態</th><th>メモ（シリアルNo.・不具合内容等）</th></tr>
+    </thead>
+    <tbody id="fault-tbody"></tbody>
+  </table>
+</div>
+
+<div class="print-note">FRACTAL GREEN　工事は売りません。調査とデータだけで、あなたの発電所の本当の状態をお伝えします。　info@fractal-green-project.jp</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const PCS_DATA = [
+  {name:'PCS1',color:'#1B4F72',kw:327.68,boxes:[
+    {name:'接続箱1-1-1',circuits:14},{name:'接続箱1-1-2',circuits:12},{name:'接続箱1-1-3',circuits:8},
+    {name:'接続箱1-2-1',circuits:8},{name:'接続箱1-2-2',circuits:8},{name:'接続箱1-2-3',circuits:8},{name:'接続箱1-2-4',circuits:6}
+  ]},
+  {name:'PCS2',color:'#0B5345',kw:312.32,boxes:[
+    {name:'接続箱2-1-1',circuits:10},{name:'接続箱2-1-2',circuits:9},{name:'接続箱2-1-3',circuits:9},
+    {name:'接続箱2-2-1',circuits:9},{name:'接続箱2-2-2',circuits:9},{name:'接続箱2-2-3',circuits:8},{name:'接続箱2-2-4',circuits:7}
+  ]},
+  {name:'PCS3',color:'#4A235A',kw:296.96,boxes:[
+    {name:'接続箱3-1-1',circuits:7},{name:'接続箱3-1-2',circuits:5},{name:'接続箱3-1-3',circuits:9},{name:'接続箱3-1-4',circuits:4},{name:'接続箱3-1-5',circuits:6},
+    {name:'接続箱3-2-1',circuits:9},{name:'接続箱3-2-2',circuits:9},{name:'接続箱3-2-3',circuits:9}
+  ]},
+  {name:'PCS4',color:'#6E2F0E',kw:296.96,boxes:[
+    {name:'接続箱4-1-1',circuits:9},{name:'接続箱4-1-2',circuits:9},{name:'接続箱4-1-3',circuits:9},
+    {name:'接続箱4-2-1',circuits:10},{name:'接続箱4-2-2',circuits:5},{name:'接続箱4-2-3',circuits:8},{name:'接続箱4-2-4',circuits:8}
+  ]},
+  {name:'PCS5',color:'#0F6E56',kw:276.48,boxes:[
+    {name:'接続箱5-1-1',circuits:8},{name:'接続箱5-1-2',circuits:8},{name:'接続箱5-1-3',circuits:8},
+    {name:'接続箱5-2-1',circuits:6},{name:'接続箱5-2-2',circuits:8},{name:'接続箱5-2-3',circuits:8},{name:'接続箱5-2-4',circuits:8}
+  ]}
+];
+
+let currentMode = 'unmeasured';
+const panelState = {};
+const memoData = {};
+
+function setMode(m, btn) {
+  currentMode = m;
+  document.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function key(pcs,box,c,p){return `${pcs}|${box}|${c}|${p}`;}
+
+function clickPanel(pcs,box,c,p,el){
+  const k = key(pcs,box,c,p);
+  panelState[k] = currentMode;
+  el.className = 'panel ' + currentMode;
+  updateStats();
+}
+
+function resetAll(){
+  if(!confirm('全てのデータをリセットしますか？')) return;
+  Object.keys(panelState).forEach(k=>delete panelState[k]);
+  Object.keys(memoData).forEach(k=>delete memoData[k]);
+  document.querySelectorAll('.panel').forEach(el=>el.className='panel unmeasured');
+  document.getElementById('fault-section').style.display='none';
+  updateStats();
+}
+
+function updateStats(){
+  let ok=0,fault=0,check=0,rep=0;
+  const total=4720;
+  Object.values(panelState).forEach(st=>{
+    if(st==='normal')ok++;
+    else if(st==='fault')fault++;
+    else if(st==='check')check++;
+    else if(st==='replaced')rep++;
+  });
+  const um=total-ok-fault-check-rep;
+  document.getElementById('st-total').textContent=total.toLocaleString();
+  document.getElementById('st-um').textContent=um.toLocaleString();
+  document.getElementById('st-ok').textContent=ok.toLocaleString();
+  document.getElementById('st-fault').textContent=fault.toLocaleString();
+  document.getElementById('st-check').textContent=check.toLocaleString();
+  document.getElementById('st-rep').textContent=rep.toLocaleString();
+}
+
+function showFaultList(){
+  const tbody=document.getElementById('fault-tbody');
+  const rows=[];
+  let no=1;
+  PCS_DATA.forEach(pcs=>{
+    pcs.boxes.forEach(box=>{
+      for(let c=1;c<=box.circuits;c++){
+        for(let p=1;p<=16;p++){
+          const k=key(pcs.name,box.name,c,p);
+          const st=panelState[k]||'unmeasured';
+          if(st==='fault'||st==='check'||st==='replaced'){
+            const stLabel={fault:'不具合',check:'要確認',replaced:'交換済'}[st];
+            const stColor={fault:'#dc2626',check:'#d97706',replaced:'#16a34a'}[st];
+            const memo=memoData[k]||'';
+            rows.push(`<tr>
+              <td>${no++}</td><td>${pcs.name}</td><td>${box.name}</td>
+              <td>${c}</td><td>${p}</td>
+              <td style="color:${stColor};font-weight:600">${stLabel}</td>
+              <td><input class="memo-input" type="text" value="${memo}" 
+                placeholder="シリアルNo.・不具合内容等" 
+                onchange="memoData['${k}']=this.value" /></td>
+            </tr>`);
+          }
+        }
+      }
+    });
+  });
+  tbody.innerHTML = rows.length
+    ? rows.join('')
+    : '<tr><td colspan="7" style="text-align:center;color:#9ca3af;padding:16px">不具合・要確認・交換済パネルなし</td></tr>';
+  const sec=document.getElementById('fault-section');
+  sec.style.display='block';
+  sec.scrollIntoView({behavior:'smooth'});
+}
+
+function showTip(e,pcs,box,c,p){
+  const tip=document.getElementById('tooltip');
+  const k=key(pcs,box,c,p);
+  const st=panelState[k]||'unmeasured';
+  const stLabel={normal:'正常',fault:'不具合',replaced:'交換済',check:'要確認',unmeasured:'未測定'}[st];
+  tip.textContent=`${pcs} / ${box} / 回路${c} / パネル${p}番 → ${stLabel}`;
+  tip.style.display='block';
+  tip.style.left=e.clientX+'px';
+  tip.style.top=(e.clientY-36)+'px';
+}
+function hideTip(){document.getElementById('tooltip').style.display='none';}
+
+function buildMap(){
+  const main=document.getElementById('main');
+  PCS_DATA.forEach(pcs=>{
+    const block=document.createElement('div');
+    block.className='pcs-block';
+    const totalC=pcs.boxes.reduce((s,b)=>s+b.circuits,0);
+    const totalP=totalC*16;
+    block.innerHTML=`<div class="pcs-header" style="background:${pcs.color}">
+      <span>${pcs.name}　${pcs.kw}kW</span>
+      <span style="font-size:10px;opacity:0.85">${totalC}回路 / ${totalP.toLocaleString()}枚</span>
+    </div>`;
+    const body=document.createElement('div');
+    body.className='pcs-body';
+    pcs.boxes.forEach(box=>{
+      const sec=document.createElement('div');
+      sec.className='box-section';
+      sec.innerHTML=`<div class="box-label">${box.name}　（${box.circuits}回路 / ${box.circuits*16}枚）</div>`;
+      const circuits=document.createElement('div');
+      circuits.className='circuits';
+      for(let c=1;c<=box.circuits;c++){
+        const crow=document.createElement('div');
+        crow.className='circuit-row';
+        const cno=document.createElement('div');
+        cno.className='circ-no';
+        cno.textContent=c;
+        crow.appendChild(cno);
+        const panels=document.createElement('div');
+        panels.className='panels';
+        for(let p=1;p<=16;p++){
+          const panel=document.createElement('div');
+          panel.className='panel unmeasured';
+          panel.onclick=()=>clickPanel(pcs.name,box.name,c,p,panel);
+          panel.onmouseenter=(e)=>showTip(e,pcs.name,box.name,c,p);
+          panel.onmouseleave=hideTip;
+          panels.appendChild(panel);
+        }
+        crow.appendChild(panels);
+        circuits.appendChild(crow);
+      }
+      sec.appendChild(circuits);
+      body.appendChild(sec);
+    });
+    block.appendChild(body);
+    main.appendChild(block);
+  });
+}
+
+buildMap();
+updateStats();
+</script>
+</body>
+</html>
