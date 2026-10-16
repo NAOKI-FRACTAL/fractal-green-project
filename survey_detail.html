@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D87944HHWV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Owner's own devices: open any page once with ?fg_internal=1 (undo with ?fg_internal=0).
+  // Marked hits carry traffic_type=internal and are dropped by the GA4 "Internal Traffic" data filter.
+  (function () {
+    var internal = false;
+    try {
+      var params = new URLSearchParams(location.search);
+      var flag = params.get('fg_internal');
+      if (flag === '1') localStorage.setItem('fg_internal', '1');
+      if (flag === '0') localStorage.removeItem('fg_internal');
+      if (flag !== null) {
+        params.delete('fg_internal');
+        var qs = params.toString();
+        history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+      }
+      internal = localStorage.getItem('fg_internal') === '1';
+    } catch (e) {}
+    gtag('config', 'G-D87944HHWV', internal ? { traffic_type: 'internal' } : {});
+  })();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>安全基準適合調査レポート｜FRACTAL GREEN</title>
@@ -390,6 +415,7 @@ document.getElementById('contactForm').addEventListener('submit',async function(
   try {
     const res = await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
     if(res.ok){
+      gtag('event', 'generate_lead', { form_name: 'survey_contact' });
       this.style.display='none';
       document.getElementById('successMsg').style.display='block';
     } else {
