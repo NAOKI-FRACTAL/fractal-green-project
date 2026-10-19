@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D87944HHWV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Owner's own devices: open any page once with ?fg_internal=1 (undo with ?fg_internal=0).
+  // Marked hits carry traffic_type=internal and are dropped by the GA4 "Internal Traffic" data filter.
+  (function () {
+    var internal = false;
+    try {
+      var params = new URLSearchParams(location.search);
+      var flag = params.get('fg_internal');
+      if (flag === '1') localStorage.setItem('fg_internal', '1');
+      if (flag === '0') localStorage.removeItem('fg_internal');
+      if (flag !== null) {
+        params.delete('fg_internal');
+        var qs = params.toString();
+        history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+      }
+      internal = localStorage.getItem('fg_internal') === '1';
+    } catch (e) {}
+    gtag('config', 'G-D87944HHWV', internal ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>報告書サンプル｜FRACTAL GREEN</title>
+<meta name="description" content="FRACTAL GREENが発行する報告書のサンプルです。安全基準適合調査レポート、発電停止の駆けつけ対応報告、見守り会員の月次報告を、架空の発電所を例にご覧いただけます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fractal-green-project.jp/report_sample.html">
+<meta property="og:title" content="報告書サンプル｜FRACTAL GREEN">
+<meta property="og:description" content="安全基準適合調査レポート・駆けつけ対応報告・見守り会員の月次報告のサンプル（架空の発電所）。">
+<meta property="og:image" content="https://fractal-green-project.jp/ogp-image.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="FRACTAL GREEN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="報告書サンプル｜FRACTAL GREEN">
+<meta name="twitter:description" content="安全基準適合調査レポート・駆けつけ対応報告・見守り会員の月次報告のサンプル（架空の発電所）。">
+<meta name="twitter:image" content="https://fractal-green-project.jp/ogp-image.jpg">
+<link rel="canonical" href="https://fractal-green-project.jp/report_sample.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fg: #1A4731; --fg-mid: #2D7A4F; --fg-light: #E8F5EE;
+  --gold: #B8973A; --gold-pale: #F5EDD6;
+  --ink: #1C1C18; --ink-mid: #4A4A44; --ink-faint: #9A9A92;
+  --paper: #F8F5EF; --paper-2: #EFEBE2; --white: #FFFFFF;
+  --high: #B03A2E; --mid: #B7791F; --low: #2D7A4F;
+  --serif-en: 'Cormorant Garamond', serif;
+  --serif-jp: 'Shippori Mincho B1', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+/* HEADER */
+.hd{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(26,71,49,0.97);border-bottom:1px solid rgba(184,151,58,0.2);backdrop-filter:blur(12px);}
+.hd-logo{font-family:var(--serif-en);font-size:1.1rem;font-weight:600;letter-spacing:0.12em;color:var(--white);text-decoration:none;}
+.hd-logo span{color:var(--gold);}
+.hd-back{font-size:0.72rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:var(--sans);font-weight:300;transition:color 0.2s;}
+.hd-back:hover{color:var(--gold);}
+
+/* HERO */
+.hero{background:var(--fg);padding:140px 48px 72px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(45,122,79,0.35),transparent 70%);}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+.hero-tag{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.hero-tag-line{width:28px;height:1px;background:var(--gold);}
+.hero-tag-text{font-size:0.62rem;font-weight:500;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;}
+.hero-h1{font-family:var(--serif-jp);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--white);line-height:1.4;margin-bottom:20px;}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:2;max-width:680px;font-weight:300;}
+.notice{margin-top:28px;display:inline-block;border:1px solid rgba(184,151,58,0.45);background:rgba(184,151,58,0.08);color:var(--gold-pale);padding:12px 18px;font-size:0.8rem;line-height:1.8;}
+.toc{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;}
+.toc a{font-size:0.75rem;color:var(--white);text-decoration:none;border:1px solid rgba(255,255,255,0.25);padding:8px 14px;transition:border-color 0.2s,color 0.2s;}
+.toc a:hover{border-color:var(--gold);color:var(--gold);}
+
+/* SECTION */
+.sec{padding:80px 0;}
+.sec:nth-of-type(even){background:var(--white);}
+.wrap{max-width:900px;margin:0 auto;padding:0 48px;}
+.sec-tag{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.sec-tag-line{width:28px;height:1px;background:var(--gold);}
+.sec-tag-text{font-size:0.62rem;font-weight:500;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;}
+.sec-h2{font-family:var(--serif-jp);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:var(--fg);line-height:1.5;margin-bottom:12px;}
+.sec-lead{font-size:0.85rem;color:var(--ink-mid);line-height:2;font-weight:300;margin-bottom:32px;}
+.gold-rule{width:40px;height:2px;background:var(--gold);margin-bottom:24px;}
+
+/* DOCUMENT */
+.doc{background:var(--white);border:1px solid var(--paper-2);border-top:3px solid var(--fg);box-shadow:0 12px 40px rgba(0,0,0,0.06);padding:40px;}
+.sec:nth-of-type(even) .doc{background:var(--paper);}
+.doc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--paper-2);padding-bottom:20px;margin-bottom:24px;}
+.doc-title{font-family:var(--serif-jp);font-size:1.15rem;font-weight:700;color:var(--fg);}
+.doc-stamp{font-size:0.65rem;letter-spacing:0.12em;color:var(--high);border:1px solid var(--high);padding:4px 10px;white-space:nowrap;}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px;font-size:0.78rem;color:var(--ink-mid);margin-bottom:28px;}
+.meta b{font-weight:500;color:var(--ink);margin-right:8px;}
+.h3{font-family:var(--serif-jp);font-size:0.95rem;font-weight:700;color:var(--fg);margin:32px 0 14px;padding-left:10px;border-left:3px solid var(--gold);}
+.p{font-size:0.82rem;color:var(--ink-mid);line-height:2;font-weight:300;}
+.note{font-size:0.72rem;color:var(--ink-faint);line-height:1.8;margin-top:10px;}
+
+/* SCORE */
+.score{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:center;}
+.score-total{text-align:center;border:1px solid var(--paper-2);padding:20px 12px;}
+.score-num{font-family:var(--serif-en);font-size:3.4rem;font-weight:600;color:var(--fg);line-height:1;}
+.score-num small{font-size:1rem;color:var(--ink-faint);}
+.score-label{font-size:0.72rem;color:var(--ink-faint);margin-top:6px;}
+.bars{display:flex;flex-direction:column;gap:12px;}
+.bar-row{display:grid;grid-template-columns:120px 1fr 36px;gap:12px;align-items:center;font-size:0.78rem;}
+.bar{height:8px;background:var(--paper-2);position:relative;}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--fg-mid);}
+.bar i.warn{background:var(--mid);}
+.bar-val{text-align:right;font-family:var(--serif-en);font-size:1rem;font-weight:600;}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;min-width:560px;}
+th{background:var(--fg);color:var(--white);font-weight:500;text-align:left;padding:9px 10px;white-space:nowrap;}
+td{border-bottom:1px solid var(--paper-2);padding:10px;vertical-align:top;line-height:1.7;color:var(--ink);}
+td.num{text-align:right;white-space:nowrap;}
+td:last-child,td:first-child{white-space:nowrap;}
+.lv{display:inline-block;font-size:0.68rem;padding:1px 8px;color:var(--white);white-space:nowrap;}
+.lv.h{background:var(--high);} .lv.m{background:var(--mid);} .lv.l{background:var(--low);}
+
+/* PHOTOS */
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.photo{border:1px solid var(--paper-2);background:var(--white);}
+.photo-img{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--paper-2) 0 10px,var(--paper) 10px 20px);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--ink-faint);text-align:center;padding:8px;}
+.photo-cap{font-size:0.72rem;color:var(--ink-mid);padding:8px 10px;line-height:1.6;}
+.photo-cap b{color:var(--fg);font-weight:500;margin-right:6px;}
+
+/* TIMELINE */
+.tl{list-style:none;border-left:2px solid var(--paper-2);margin-left:6px;}
+.tl li{position:relative;padding:0 0 18px 22px;font-size:0.82rem;line-height:1.8;color:var(--ink-mid);font-weight:300;}
+.tl li::before{content:'';position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--white);border:2px solid var(--fg-mid);}
+.tl li.key::before{background:var(--gold);border-color:var(--gold);}
+.tl time{display:block;font-family:var(--serif-en);font-size:1rem;font-weight:600;color:var(--fg);}
+
+/* VERDICT */
+.verdict{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--gold-pale);padding:14px 18px;margin-bottom:24px;font-size:0.85rem;}
+.verdict .lv{font-size:0.75rem;padding:3px 12px;}
+
+/* SIGN */
+.sign{margin-top:32px;padding-top:20px;border-top:1px solid var(--paper-2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:0.75rem;color:var(--ink-mid);line-height:1.8;}
+.sign b{font-family:var(--serif-jp);font-size:0.95rem;color:var(--ink);}
+
+/* CTA */
+.cta{background:var(--fg);padding:72px 0;text-align:center;}
+.cta-h{font-family:var(--serif-jp);font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:700;color:var(--white);margin-bottom:28px;line-height:1.6;}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--fg);padding:15px 28px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,0.35);color:var(--white);padding:15px 28px;text-decoration:none;font-size:0.85rem;}
+
+/* FOOTER */
+footer{background:#0E1A13;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.ft-logo{font-family:var(--serif-en);font-size:0.95rem;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.12em;}
+.ft-logo span{color:var(--gold);}
+.ft-info{font-size:0.68rem;color:rgba(255,255,255,0.25);text-align:right;line-height:1.8;font-weight:300;}
+
+@media(max-width:768px){
+  .hd{padding:0 16px;}
+  .wrap{padding:0 16px;}
+  .hero{padding:110px 16px 56px;}
+  .sec{padding:56px 0;}
+  .doc{padding:24px 16px;}
+  .meta{grid-template-columns:1fr;}
+  .score{grid-template-columns:1fr;gap:20px;}
+  .bar-row{grid-template-columns:96px 1fr 32px;}
+  .photos{grid-template-columns:1fr 1fr;}
+  footer{flex-direction:column;text-align:center;padding:28px 16px;}
+  .ft-info{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a href="index.html" class="hd-logo">FRACTAL <span>GREEN</span></a>
+  <a href="index.html" class="hd-back">← トップページに戻る</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><div class="hero-tag-line"></div><span class="hero-tag-text">Report Samples</span></div>
+    <h1 class="hero-h1">報告書サンプル</h1>
+    <p class="hero-sub">ご依頼いただくと、どんな報告書が届くのか。3つのサービスについて、実際の書式でお見せします。結論を先に、根拠は写真と数字で、やるべきことは誰に頼むかまで書きます。</p>
+    <div class="notice">このページの発電所・日時・数値・所見は、すべて説明用の<strong>架空のもの</strong>です。実在の発電所とは関係ありません。</div>
+    <nav class="toc">
+      <a href="#survey">1. 安全基準適合調査レポート</a>
+      <a href="#dispatch">2. 駆けつけ対応報告</a>
+      <a href="#watch">3. 見守り会員 月次報告</a>
+    </nav>
+  </div>
+</section>
+
+<!-- 1. SURVEY -->
+<section class="sec" id="survey">
+  <div class="wrap">
+    <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Sample 01 — Survey Report</span></div>
+    <div class="gold-rule"></div>
+    <h2 class="sec-h2">安全基準適合調査レポート（抜粋）</h2>
+    <p class="sec-lead">¥50,000〜。実際の報告書はPDFで10〜15ページです。ここでは主要なページを抜粋しています。</p>
+
+    <div class="doc">
+      <div class="doc-head">
+        <div class="doc-title">安全基準適合調査レポート</div>
+        <div class="doc-stamp">SAMPLE／架空</div>
+      </div>
+      <div class="meta">
+        <div><b>対象</b>サンプル発電所A</div>
+        <div><b>所在地</b>福岡県 筑豊地域（架空）</div>
+        <div><b>規模</b>低圧 49.5kW（パネル 64.8kW）</div>
+        <div><b>運転開始</b>2014年</div>
+        <div><b>調査日</b>2026年9月12日 9:00〜13:30</div>
+        <div><b>天候</b>晴れ</div>
+      </div>
+
+      <div class="h3">総合評価</div>
+      <div class="score">
+        <div class="score-total">
+          <div class="score-num">62<small> / 100</small></div>
+          <div class="score-label">総合スコア</div>
+        </div>
+        <div class="bars">
+          <div class="bar-row"><span>盗難リスク</span><div class="bar"><i class="warn" style="width:48%"></i></div><span class="bar-val">48</span></div>
+          <div class="bar-row"><span>管理記録</span><div class="bar"><i class="warn" style="width:55%"></i></div><span class="bar-val">55</span></div>
+          <div class="bar-row"><span>設備劣化</span><div class="bar"><i style="width:70%"></i></div><span class="bar-val">70</span></div>
+          <div class="bar-row"><span>発電パフォーマンス</span><div class="bar"><i style="width:74%"></i></div><span class="bar-val">74</span></div>
+        </div>
+      </div>
+      <p class="p" style="margin-top:20px">結論：設備そのものは年数相応ですが、<strong>北側フェンスに盗難の下見とみられる切断痕</strong>があり、盗難リスクが最も高い状態です。フェンスと接続箱の対策を最優先にしてください。</p>
+
+      <div class="h3">主な指摘事項</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>No.</th><th>部位</th><th>所見</th><th>緊急度</th><th>写真</th></tr>
+          <tr><td>1</td><td>北側フェンス</td><td>支柱根元のメッシュに切断痕。人が通れる約40cmの隙間。切り口に錆がなく、比較的新しい</td><td><span class="lv h">高</span></td><td>P-03</td></tr>
+          <tr><td>2</td><td>接続箱2</td><td>扉が施錠されていない。ケーブル保護管が一部破損し、幹線ケーブルが露出</td><td><span class="lv h">高</span></td><td>P-07</td></tr>
+          <tr><td>3</td><td>架台（南西列）</td><td>ボルト2本の緩み（目視と手触りで確認）</td><td><span class="lv m">中</span></td><td>P-11</td></tr>
+          <tr><td>4</td><td>パネル</td><td>3枚にガラス割れ（回路3-07・3-08・5-12）</td><td><span class="lv m">中</span></td><td>P-14</td></tr>
+          <tr><td>5</td><td>除草</td><td>南側で草がパネル下端に到達し、影が出始めている</td><td><span class="lv l">低</span></td><td>P-02</td></tr>
+        </table>
+      </div>
+
+      <div class="h3">現地写真記録（抜粋）</div>
+      <div class="photos">
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>P-03</b>北側フェンス支柱根元の切断痕。隙間は約40cm</div></div>
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>P-07</b>接続箱2。施錠なし、保護管の破損</div></div>
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>P-14</b>回路3-07のパネル割れ</div></div>
+      </div>
+      <p class="note">実際の報告書では、すべての指摘箇所に現地写真が入ります。撮影位置は配置図に番号で示します。</p>
+
+      <div class="h3">発電パフォーマンス</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>項目</th><th>値</th><th>備考</th></tr>
+          <tr><td>計画年間発電量</td><td class="num">58,000 kWh</td><td>設計時のシミュレーション値</td></tr>
+          <tr><td>直近12か月の実績</td><td class="num">51,300 kWh</td><td>売電の検針票より集計</td></tr>
+          <tr><td>計画比</td><td class="num">88.4 %</td><td>同地域の同年代の発電所と比べてやや低い</td></tr>
+          <tr><td>推定逸失</td><td class="num">約 6,700 kWh</td><td>売電単価32円で約21万円／年。うち出力制御による分と、割れ・影による分を分けて推計</td></tr>
+        </table>
+      </div>
+
+      <div class="h3">改善提案（優先順）</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>順</th><th>内容</th><th>頼む先</th><th>費用の目安</th></tr>
+          <tr><td>1</td><td>北側フェンスの補修と支柱まわりの補強</td><td>O&amp;M業者または施工業者</td><td class="num">5〜15万円</td></tr>
+          <tr><td>2</td><td>接続箱の施錠と保護管の交換</td><td>電気工事業者</td><td class="num">2〜5万円</td></tr>
+          <tr><td>3</td><td>防犯カメラ・センサーライトの設置検討</td><td>防犯設備業者</td><td class="num">15〜40万円</td></tr>
+          <tr><td>4</td><td>割れパネル3枚の交換</td><td>O&amp;M業者</td><td class="num">1枚 3〜6万円</td></tr>
+        </table>
+      </div>
+      <p class="note">FRACTAL GREENは工事を請け負いません。業者から届いた見積が妥当かどうかの確認は承ります。</p>
+
+      <div class="sign">
+        <div>調査者<br><b>酒井 直樹</b>（FRACTAL GREEN 代表）</div>
+        <div>第一種電気工事士／1級電気施工管理技士補<br>1級土木施工管理技術者／登録電気工事業者</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. DISPATCH -->
+<section class="sec" id="dispatch">
+  <div class="wrap">
+    <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Sample 02 — Dispatch Report</span></div>
+    <div class="gold-rule"></div>
+    <h2 class="sec-h2">発電停止・通信停止の駆けつけ対応報告</h2>
+    <p class="sec-lead">¥20,000〜（筑豊内）。対応の当日中に、この形でお送りします。</p>
+
+    <div class="doc">
+      <div class="doc-head">
+        <div class="doc-title">駆けつけ対応報告書</div>
+        <div class="doc-stamp">SAMPLE／架空</div>
+      </div>
+      <div class="meta">
+        <div><b>対象</b>サンプル発電所B（低圧 49.9kW、パワコン3台）</div>
+        <div><b>所在地</b>福岡県 筑豊地域（架空）</div>
+        <div><b>ご連絡</b>「監視画面が3日前から更新されない」</div>
+        <div><b>対応日</b>2026年9月24日</div>
+      </div>
+
+      <div class="verdict"><span class="lv l">復旧済み</span>パワコン3台の運転再開を 13:05 に確認しました。停止していた期間は推定3日間です。</div>
+
+      <div class="h3">対応の経過</div>
+      <ul class="tl">
+        <li><time>08:40</time>オーナー様よりメールでご連絡。監視サービスの最終受信は9月21日 10:12。</li>
+        <li><time>11:10</time>現地到着。パワコン3台とも停止。表示は出力制御スケジュールの有効期限切れ。</li>
+        <li class="key"><time>11:35</time>原因を特定。通信機器（LTEルーター）の電源アダプタが故障し、ルーターが停止。スケジュールを受け取れないまま有効期限が切れ、出力上限0%で発電が止まっていた。</li>
+        <li><time>12:20</time>オーナー様の了承を得て、同等品のアダプタに交換（部品は実費）。ルーターを再起動し、通信の回復を確認。</li>
+        <li><time>12:40</time>出力制御スケジュールを再取得。発電所IDの設定に誤りがないことも確認。</li>
+        <li class="key"><time>13:05</time>パワコン3台の運転再開と、監視サービスへのデータ送信再開を確認。</li>
+      </ul>
+
+      <div class="h3">損失の推計と再発防止</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>項目</th><th>内容</th></tr>
+          <tr><td>停止期間</td><td>9月21日 10時ごろ 〜 9月24日 13:05（推定）</td></tr>
+          <tr><td>推定逸失</td><td>約520 kWh（近隣の日射実績から推計）</td></tr>
+          <tr><td>再発防止</td><td>①通信が途絶したら通知が届くよう、監視サービスの設定変更をオーナー様から依頼していただく　②ルーターの電源を落雷対策付きのタップに変更することを推奨</td></tr>
+          <tr><td>費用</td><td>出動・作業 20,000円（税別）＋ 部品実費</td></tr>
+        </table>
+      </div>
+
+      <div class="photos" style="margin-top:20px">
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>到着時</b>パワコンの停止表示</div></div>
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>原因</b>故障した電源アダプタ</div></div>
+        <div class="photo"><div class="photo-img">現地写真</div><div class="photo-cap"><b>復旧後</b>3台の運転表示</div></div>
+      </div>
+
+      <div class="sign">
+        <div>対応者<br><b>酒井 直樹</b>（FRACTAL GREEN 代表）</div>
+        <div>機器は販売していません。部品は実費のみ、<br>交換の前に内容と費用をお伝えします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. WATCH -->
+<section class="sec" id="watch">
+  <div class="wrap">
+    <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Sample 03 — Monthly Watch</span></div>
+    <div class="gold-rule"></div>
+    <h2 class="sec-h2">見守り会員 月次報告</h2>
+    <p class="sec-lead">¥5,000〜／月。毎月の巡回後、1枚の報告にまとめてお送りします。</p>
+
+    <div class="doc">
+      <div class="doc-head">
+        <div class="doc-title">見守り報告　2026年9月</div>
+        <div class="doc-stamp">SAMPLE／架空</div>
+      </div>
+      <div class="meta">
+        <div><b>対象</b>サンプル発電所C（低圧 49.5kW）</div>
+        <div><b>巡回日</b>2026年9月18日 15:20</div>
+      </div>
+
+      <div class="verdict"><span class="lv m">要注意 1件</span>東側の進入路に、新しい車両の轍がありました。盗難の下見の可能性があるため、来月まで注意して見ます。</div>
+
+      <div class="photos">
+        <div class="photo"><div class="photo-img">定点写真</div><div class="photo-cap"><b>定点1</b>南側全景。前月と変化なし</div></div>
+        <div class="photo"><div class="photo-img">定点写真</div><div class="photo-cap"><b>定点2</b>東側進入路。新しい轍あり</div></div>
+        <div class="photo"><div class="photo-img">定点写真</div><div class="photo-cap"><b>定点3</b>北側フェンス。異常なし</div></div>
+      </div>
+
+      <div class="h3">今月の確認結果</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>項目</th><th>結果</th><th>前月</th></tr>
+          <tr><td>管理状態スコア（0〜10、低いほど良い）</td><td>3</td><td>2</td></tr>
+          <tr><td>草</td><td>パネル下端の手前。来月の除草を推奨</td><td>問題なし</td></tr>
+          <tr><td>フェンス・門・標識</td><td>異常なし</td><td>異常なし</td></tr>
+          <tr><td>盗難の下見の痕跡</td><td><span class="lv m">あり</span> 東側進入路の轍</td><td>なし</td></tr>
+          <tr><td>出力制御</td><td>今月の制御日数 4日。制御のあと、いずれも正常に発電が戻っていることを確認</td><td>2日</td></tr>
+          <tr><td>監視データの途絶</td><td>なし</td><td>なし</td></tr>
+        </table>
+      </div>
+
+      <div class="h3">やること</div>
+      <p class="p">① 轍について、近隣の方に心当たりを聞いておきます（FRACTAL GREENが対応）。<br>② 来月上旬の除草を、ご契約中の除草業者へご依頼ください。</p>
+
+      <div class="sign">
+        <div>巡回者<br><b>酒井 直樹</b>（FRACTAL GREEN 代表）</div>
+        <div>大雨・台風の後は、24時間以内に<br>臨時の確認報告をお送りします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="cta-h">あなたの発電所で、この報告書をお作りします。</h2>
+    <div class="cta-btns">
+      <a href="survey_detail.html#contact" class="btn-gold">▶ 現地調査を依頼する</a>
+      <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-ghost">駆けつけ・見守りの相談</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo">FRACTAL <span>GREEN</span></div>
+  <div class="ft-info">
+    酒井 直樹　福岡県田川市猪国2559（いいかねPalette内）<br>
+    info@fractal-green-project.jp<br>
+    © 2025 FRACTAL GREEN. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
