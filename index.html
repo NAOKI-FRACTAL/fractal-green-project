@@ -501,7 +501,7 @@ body {
 }
 .svc-group .svc-grid { margin-top: 16px; }
 .svc-grid-3 { grid-template-columns: repeat(3,1fr); }
-.svc-grid-3 .svc-card { grid-template-columns: 1fr; gap: 16px; padding: 40px 32px; }
+.svc-grid-3 .svc-card { grid-template-columns: 1fr; gap: 16px; }
 .svc-card { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; }
 .svc-card.compact { padding: 36px 36px; }
 .svc-ill {
@@ -511,11 +511,16 @@ body {
 .svc-ill svg { width: 40px; height: 40px; fill: none; stroke: var(--fg); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .svc-card.lead .svc-ill { background: var(--gold-pale); }
 .svc-card.lead .svc-ill svg { stroke: var(--gold); }
+.svc-card.has-photo { display: flex; flex-direction: column; padding: 0; }
+.svc-photo { display: block; width: 100%; aspect-ratio: 16 / 9; max-height: 260px; object-fit: cover; }
+.svc-card.has-photo .svc-body { padding: 28px 36px 40px; }
 a.svc-badge { text-decoration: none; }
 .svc-badge + .svc-badge { margin-left: 6px; }
-@media (max-width: 1100px) { .svc-grid-3 { grid-template-columns: 1fr; } .svc-grid-3 .svc-card { grid-template-columns: 72px 1fr; gap: 24px; } }
+@media (max-width: 1100px) { .svc-grid-3 { grid-template-columns: 1fr; } }
 @media (max-width: 640px) {
   .svc-card { grid-template-columns: 1fr; gap: 16px; padding: 32px 24px; }
+  .svc-card.has-photo { padding: 0; }
+  .svc-card.has-photo .svc-body { padding: 24px 24px 32px; }
   .svc-ill { width: 56px; height: 56px; }
   .svc-ill svg { width: 32px; height: 32px; }
   .svc-badge + .svc-badge { margin-left: 0; }
@@ -924,9 +929,9 @@ footer {
     <div class="svc-group rv rv-d1">
       <div class="svc-group-h"><span class="svc-group-n">2</span>日常の見守り・管理<small>（年間・月額の契約）</small></div>
       <div class="svc-grid">
-        <div class="svc-card lead" id="svc-watch">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M6 50V22M18 50V22M30 50V22M42 50V22M6 28h36M6 44h36"/><path d="M14 56c2-4 4-6 8-6M24 58c2-4 4-6 8-6"/><circle cx="48" cy="22" r="9"/><path d="M54.5 28.5L60 34"/></svg></div>
-          <div>
+        <div class="svc-card lead has-photo" id="svc-watch">
+          <img class="svc-photo" src="img/svc-patrol.jpg" alt="フェンス際やパネルの下に伸びた雑草" loading="lazy" width="800" height="450">
+          <div class="svc-body">
             <div class="svc-phase">WATCH — 巡回</div>
             <div class="svc-title">巡回（見守り会員）</div>
             <div class="svc-price">¥36,000〜 <small>/ 年（年6回）・¥60,000 / 年（年12回）</small></div>
@@ -935,9 +940,9 @@ footer {
             <a href="report_sample.html#watch" class="svc-badge">報告サンプルを見る →</a>
           </div>
         </div>
-        <div class="svc-card">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 54h48M8 54V10"/><path d="M14 44l10-12 9 6 14-18"/><circle cx="47" cy="20" r="3"/><path d="M40 46l5 5 10-12"/></svg></div>
-          <div>
+        <div class="svc-card has-photo">
+          <img class="svc-photo" src="img/svc-advisory.jpg" alt="鳥のふんで汚れたパネル" loading="lazy" width="800" height="450">
+          <div class="svc-body">
             <div class="svc-phase">ONGOING — 継続管理</div>
             <div class="svc-title">定期モニタリング顧問契約</div>
             <div class="svc-price">¥30,000〜 <small>/ 月</small></div>
@@ -952,9 +957,9 @@ footer {
     <div class="svc-group rv rv-d1">
       <div class="svc-group-h"><span class="svc-group-n">3</span>必要なときに<small>（1回ごと・契約不要）</small></div>
       <div class="svc-grid svc-grid-3">
-        <div class="svc-card lead" id="svc-field">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="10" y="12" width="32" height="42" rx="3"/><path d="M16 22h20M16 30h20"/><circle cx="26" cy="43" r="4"/><path d="M50 10l-6 12h8l-6 12"/></svg></div>
-          <div>
+        <div class="svc-card lead has-photo" id="svc-field">
+          <img class="svc-photo" src="img/svc-spot.jpg" alt="機器の中のケーブル引き込み部" loading="lazy" width="800" height="450">
+          <div class="svc-body">
             <div class="svc-phase">FIELD — スポット対応</div>
             <div class="svc-title">スポット対応（発電停止・通信異常の駆けつけ）</div>
             <div class="svc-price">¥20,000〜 <small>/ 1回（福岡県内・遠方は交通費実費）</small></div>
@@ -963,9 +968,9 @@ footer {
             <a href="report_sample.html#dispatch" class="svc-badge">報告サンプルを見る →</a>
           </div>
         </div>
-        <div class="svc-card">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="12" y="10" width="34" height="46" rx="3"/><path d="M22 6h14v8H22z"/><path d="M19 26h20M19 34h20M19 42h12"/><circle cx="46" cy="44" r="8"/><path d="M52 50l6 6"/></svg></div>
-          <div>
+        <div class="svc-card has-photo">
+          <img class="svc-photo" src="img/svc-survey.jpg" alt="パネル裏面の損傷" loading="lazy" width="800" height="450">
+          <div class="svc-body">
             <div class="svc-phase">CORE — 現地調査</div>
             <div class="svc-title">安全基準適合調査レポート</div>
             <div class="svc-price">¥50,000〜 <small>/ 1案件</small></div>
@@ -974,9 +979,9 @@ footer {
             <a href="report_sample.html#survey" class="svc-badge">報告サンプルを見る →</a>
           </div>
         </div>
-        <div class="svc-card">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 8h26l10 10v38H14z"/><path d="M40 8v10h10"/><path d="M21 44l7-8 6 5 9-11"/><path d="M21 24h12"/></svg></div>
-          <div>
+        <div class="svc-card has-photo">
+          <img class="svc-photo" src="img/svc-exit.jpg" alt="野立ての太陽光発電所" loading="lazy" width="800" height="450">
+          <div class="svc-body">
             <div class="svc-phase">EXIT — 出口対応</div>
             <div class="svc-title">売却・融資・承継の評価</div>
             <div class="svc-price">¥200,000〜 <small>/ 案件</small></div>
