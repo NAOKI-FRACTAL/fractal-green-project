@@ -441,6 +441,11 @@ body {
   color: rgba(255,255,255,0.82); line-height: 2.2;
 }
 .why-pledge strong { color: var(--gold); }
+.why-check { list-style: none; margin: 14px auto 18px; padding: 0; display: grid; gap: 8px; max-width: 620px; text-align: left; }
+.why-check li { position: relative; padding-left: 26px; font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.8; font-weight: 300; }
+.why-check li::before { content: ""; position: absolute; left: 2px; top: 0.55em; width: 12px; height: 12px; border: 1.5px solid var(--gold); }
+.why-src { font-size: 0.72rem !important; color: rgba(255,255,255,0.5) !important; line-height: 1.9 !important; }
+.why-src a { color: var(--gold); }
 
 /* ═══════════════════════════════════════
    SERVICES
@@ -839,6 +844,7 @@ footer {
         <p class="story-p">そこで毎回感じたのが同じ問題です。業者は報告書を出す。でも本当のリスクをわかりやすく伝える人間がいない。オーナーは「大丈夫だと思う」という感覚で資産を任せています。</p>
         <p class="story-p">O&M会社は自分が管理するサイトしか見ない。施工業者は工事を売りたい。メーカーは自社設備だけを評価する。だれもオーナーの側に立って、フラットに発電所全体を見ていない。</p>
         <p class="story-p">その空白を埋めるためにFRACTAL GREENを始めました。</p>
+        <p class="story-p">FRACTAL GREENは工事や機器の販売を目的とせず、調査・現地対応・報告・施工管理の対価で成り立っています。工事が必要なときは、業者をオーナーが選べます。ご依頼があれば、協力会社への発注と施工管理（1級土木施工管理技士）をお引き受けし、費用の内訳を開示します。施工管理をした工事を、第三者として評価することはありません。</p>
         <div class="story-sign">
           <div class="story-sign-role">FRACTAL GREEN 代表</div>
           <div class="story-sign-name">酒井 直樹</div>
@@ -851,43 +857,50 @@ footer {
   </div>
 </section>
 
-<!-- ░░░ WHY ░░░ -->
-<section class="why sec">
+<!-- ░░░ FOR OWNERS ░░░ -->
+<section class="why sec" id="owners">
   <div class="wrap">
     <div class="why-intro rv">
       <div>
         <div class="sec-tag">
           <div class="sec-tag-line"></div>
-          <span class="sec-tag-text">Why Fractal Green</span>
+          <span class="sec-tag-text">For Owners</span>
         </div>
         <div class="gold-rule"></div>
-        <h2 class="sec-h2 sec-h2-wh">なぜ工事を<br>売り込まないのか</h2>
+        <h2 class="sec-h2 sec-h2-wh">発電所オーナーが、<br>いま知っておきたいこと</h2>
       </div>
-      <p class="why-intro-right">工事や機器を販売する業者が「中立の立場でリスクを評価する」ことは構造的に不可能です。問題を見つければ工事提案になる。そこに利益相反が生まれます。11年間、売る側にいたからこそ、その構造を知っています。だからFRACTAL GREENは、工事や機器の利益で判断が曲がらない仕組みにしています。</p>
+      <p class="why-intro-right">盗難の増加、管理の義務、雑草と暗さ。どれも、発電所から離れて暮らすオーナーほど気づきにくいことです。公表されている情報と現場の経験から整理しました。</p>
     </div>
     <div class="why-cards rv rv-d1">
       <div class="why-card">
         <div class="why-card-n">01</div>
-        <div class="why-card-t">完全中立の第三者</div>
-        <div class="why-card-b">工事・機器の販売を目的としません。調査で見つかった問題は、事実と選択肢をそのままお伝えします。工事が必要な場合、業者はオーナーが選べます。ご依頼があれば、協力会社への発注と施工管理（1級土木施工管理技士）をお引き受けし、費用の内訳を開示します。機器で利益は取りません。</div>
+        <div class="why-card-t">金属盗は、4年で約4倍に</div>
+        <div class="why-card-b">警察庁によると、金属盗の認知件数は令和2年の5,478件から、令和6年には20,701件に増えました。太陽光発電所の銅線ケーブルは主な標的の一つです。2025年には、盗まれた金属の売却を防ぐための法律も成立しました。</div>
       </div>
       <div class="why-card">
         <div class="why-card-n">02</div>
-        <div class="why-card-t">データと根拠で話す</div>
-        <div class="why-card-b">気象データ・全国盗難統計・設備仕様データとの照合で根拠を明示します。「なぜそうなのか」を数字で伝えます。感覚ではなく、根拠で判断できる情報をお渡しします。</div>
+        <div class="why-card-t">管理は、任せきりにできない</div>
+        <div class="why-card-b">2024年4月の再エネ特措法の改正で、認定事業者（オーナー）には、保守点検などの委託先を監督する義務が加わりました。10〜50kWの太陽光発電設備には、技術基準に適合した状態を保つ義務もあります。報告書を受け取るだけでなく、中身を確かめることが求められています。</div>
       </div>
       <div class="why-card">
         <div class="why-card-n">03</div>
-        <div class="why-card-t">不安を煽らない</div>
-        <div class="why-card-b">「このままでは大変なことになる」という売り方はしません。現状を正確に把握し、優先順位をつけて、建設的な選択肢をお伝えします。</div>
+        <div class="why-card-t">雑草と暗さは、侵入の入口</div>
+        <div class="why-card-b">フェンス際に茂った雑草は死角をつくり、侵入しやすくするうえ、侵入の痕跡も見つけにくくします。夜間の暗さも同じです。草の伸び方はその年の天候で変わるため、年1〜2回の除草では足りない年もあります。</div>
       </div>
     </div>
     <div class="why-pledge rv rv-d2">
-      <p>FRACTAL GREENの収益は、<strong>調査・現地対応・レポート・施工管理・コンサルティングの対価</strong>です。<br>機器の販売で利益は取りません。施工管理を行った工事を、FRACTAL GREENが第三者として評価することもありません。<br>それがオーナーの側に立ち続けるための設計です。</p>
+      <p><strong>まず、ご自身で確かめられること</strong></p>
+      <ul class="why-check">
+        <li>フェンスの留め金具の外れ、切れ目、曲がりがないか</li>
+        <li>フェンス際やパネルの下の雑草が、人の膝より高くなっていないか</li>
+        <li>ケーブルがむき出しになっている所や、保護管の外れがないか</li>
+        <li>夜、発電所の周りが真っ暗になっていないか</li>
+        <li>発電所の標識が掲示され、読める状態か（20kW以上は掲示が必要）</li>
+      </ul>
+      <p class="why-src">ひとつでも気になれば、<a href="solar_diagnosis.html">無料60秒 盗難リスク診断</a>か、無料相談からどうぞ。<br>出典：警察庁「令和7年警察白書」、資源エネルギー庁（再エネ特措法・事業計画策定ガイドライン）</p>
     </div>
   </div>
 </section>
-
 <!-- ░░░ SERVICES ░░░ -->
 <section class="services sec" id="services">
   <div class="wrap">
