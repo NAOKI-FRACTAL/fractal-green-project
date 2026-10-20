@@ -131,7 +131,7 @@ body {
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(14,22,16,0.78) 0%, rgba(14,22,16,0.55) 38%, rgba(14,22,16,0.12) 66%, rgba(14,22,16,0) 100%);
+  background: linear-gradient(90deg, rgba(14,22,16,0.62) 0%, rgba(14,22,16,0.4) 38%, rgba(14,22,16,0.05) 62%, rgba(14,22,16,0) 100%);
 }
 
 /* グリッド線 */
@@ -168,7 +168,7 @@ body {
   line-height: 1.45; margin-bottom: 28px;
 }
 .hero-h1 .nw { white-space: nowrap; }
-.hero-h1, .hero-hook, .hero-eyebrow-text { text-shadow: 0 2px 12px rgba(0,0,0,0.55); }
+.hero-h1, .hero-hook, .hero-eyebrow-text { text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 2px 16px rgba(0,0,0,0.6); }
 .hero-h1 .accent {
   position: relative; display: inline-block;
 }
@@ -193,6 +193,8 @@ body {
   margin-bottom: 40px; font-weight: 400;
 }
 .hero-actions { display: flex; flex-direction: column; gap: 12px; max-width: 360px; }
+.hero .btn-ghost { background: rgba(10,20,14,0.45); color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.4); }
+.hero-eyebrow-text { color: #E9CF86; }
 .hero-proof {
   list-style: none; display: flex; flex-wrap: wrap; gap: 8px;
   margin-top: 32px;
@@ -662,7 +664,7 @@ footer {
   .hero-card { display: none; }
   .hero-left { padding: 56px 0; }
   .hero { background-position: 42% 50%; }
-  .hero::before { background: linear-gradient(180deg, rgba(14,22,16,0.5) 0%, rgba(14,22,16,0.6) 45%, rgba(14,22,16,0.25) 100%); }
+  .hero::before { background: linear-gradient(180deg, rgba(14,22,16,0.35) 0%, rgba(14,22,16,0.5) 45%, rgba(14,22,16,0.15) 100%); }
   .hero-h1 { font-size: min(5.8vw, 1.8rem); }
   .hero-hook { font-size: 0.95rem; }
   .hero-inner { padding: 0 16px; }
