@@ -485,6 +485,42 @@ body {
   color: var(--ink-faint); font-weight: 300;
 }
 .svc-desc { font-size: 0.82rem; color: var(--ink-mid); line-height: 2; font-weight: 300; }
+.svc-lead { font-size: 0.85rem; color: var(--ink-mid); margin-top: 8px; font-weight: 300; }
+.svc-group { margin-top: 48px; }
+.svc-group-h {
+  display: flex; align-items: baseline; gap: 12px;
+  font-family: var(--serif-jp); font-size: 1.15rem; font-weight: 700; color: var(--fg);
+  padding-bottom: 12px; border-bottom: 1px solid var(--paper-2);
+}
+.svc-group-h small { font-family: var(--sans); font-size: 0.75rem; font-weight: 300; color: var(--ink-faint); }
+.svc-group-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--fg); color: var(--gold); font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+  align-self: center;
+}
+.svc-group .svc-grid { margin-top: 16px; }
+.svc-grid-3 { grid-template-columns: repeat(3,1fr); }
+.svc-grid-3 .svc-card { grid-template-columns: 1fr; gap: 16px; padding: 40px 32px; }
+.svc-card { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; }
+.svc-card.compact { padding: 36px 36px; }
+.svc-ill {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--fg-light); display: flex; align-items: center; justify-content: center;
+}
+.svc-ill svg { width: 40px; height: 40px; fill: none; stroke: var(--fg); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.svc-card.lead .svc-ill { background: var(--gold-pale); }
+.svc-card.lead .svc-ill svg { stroke: var(--gold); }
+a.svc-badge { text-decoration: none; }
+.svc-badge + .svc-badge { margin-left: 6px; }
+@media (max-width: 1100px) { .svc-grid-3 { grid-template-columns: 1fr; } .svc-grid-3 .svc-card { grid-template-columns: 72px 1fr; gap: 24px; } }
+@media (max-width: 640px) {
+  .svc-card { grid-template-columns: 1fr; gap: 16px; padding: 32px 24px; }
+  .svc-ill { width: 56px; height: 56px; }
+  .svc-ill svg { width: 32px; height: 32px; }
+  .svc-badge + .svc-badge { margin-left: 0; }
+  .svc-group-h { flex-wrap: wrap; }
+}
 .svc-badge {
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: 20px;
@@ -855,60 +891,99 @@ footer {
       <div class="gold-rule"></div>
       <h2 class="sec-h2">サービス内容</h2>
     </div>
-   <div class="svc-grid rv rv-d1" style="grid-template-columns:1fr;">
-  <div class="svc-card lead">
-    <div class="svc-phase">CONSULT — まず話す</div>
-    <div class="svc-title">「誰に頼めばいいか分からない」相談</div>
-    <div class="svc-price">¥0 <small>/ 初回無料</small></div>
-    <div class="svc-desc">EPC倒産・O&amp;M撤退・制度変更・申請・行政対応・業者交渉・災害対応・売却検討。<br><br>「これはFGに頼んでいいのか？」それ自体をまず相談してください。</div>
-    <a href="mailto:info@fractal-green-project.jp" class="svc-badge">▶ メールで相談する</a>
-  </div>
-</div>
-<div class="svc-grid rv rv-d1"> 
-      <div class="svc-card lead">
-        <div class="svc-phase">ENTRY — まず試す</div>
-        <div class="svc-title">無料60秒 盗難リスク診断</div>
-        <div class="svc-price">¥0 <small>/ 完全無料</small></div>
-        <div class="svc-desc">選択式8問。発電所の状況を入力するだけで、盗難リスクのスコアと現状評価が即時に表示されます。営業の連絡は一切ありません。まず現状を把握するところから始めてください。</div>
-        <span class="svc-badge">▶ 今すぐ始める</span>
+    <p class="svc-lead rv rv-d1">ご利用の場面ごとに、3つに分けています。料金はすべて税別です。</p>
+
+    <!-- ① まずは無料で -->
+    <div class="svc-group rv rv-d1">
+      <div class="svc-group-h"><span class="svc-group-n">1</span>まずは無料で</div>
+      <div class="svc-grid svc-grid-compact">
+        <div class="svc-card compact">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 14h44a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H30l-12 10V44h-8a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/><path d="M20 26h24M20 33h16"/></svg></div>
+          <div>
+            <div class="svc-phase">CONSULT — まず話す</div>
+            <div class="svc-title">「誰に頼めばいいか分からない」相談</div>
+            <div class="svc-price">¥0 <small>/ 初回無料</small></div>
+            <div class="svc-desc">EPC倒産・O&amp;M撤退・制度変更・災害対応・売却検討など。「これはFGに頼んでいいのか？」から相談できます。</div>
+            <a href="mailto:info@fractal-green-project.jp" class="svc-badge">▶ メールで相談する</a>
+          </div>
+        </div>
+        <div class="svc-card compact">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="20"/><path d="M32 36V24M26 8h12M32 8v8M48 18l4-4"/></svg></div>
+          <div>
+            <div class="svc-phase">ENTRY — まず試す</div>
+            <div class="svc-title">無料60秒 盗難リスク診断</div>
+            <div class="svc-price">¥0 <small>/ 完全無料</small></div>
+            <div class="svc-desc">選択式8問で、盗難リスクのスコアと現状評価がすぐ表示されます。営業の連絡はありません。</div>
+            <a href="solar_diagnosis.html" class="svc-badge">▶ 今すぐ始める</a>
+          </div>
+        </div>
       </div>
-      <div class="svc-card">
-        <div class="svc-phase">CORE — 現地調査</div>
-        <div class="svc-title">安全基準適合調査レポート</div>
-        <div class="svc-price">¥50,000〜 <small>/ 1案件</small></div>
-        <div class="svc-desc">現地目視・写真記録・データ分析による第三者評価レポート。盗難リスク・設備劣化・O&M品質を数値化し、保険会社・金融機関への提出にも対応した正式ドキュメントとして発行します。</div>
-        <a href="survey_detail.html" class="svc-badge" style="display:inline-flex;text-decoration:none;">詳細・お申し込み →</a>
-        <a href="report_sample.html#survey" class="svc-badge" style="display:inline-flex;text-decoration:none;">報告書サンプルを見る →</a>
+    </div>
+
+    <!-- ② 日常の見守り・管理 -->
+    <div class="svc-group rv rv-d1">
+      <div class="svc-group-h"><span class="svc-group-n">2</span>日常の見守り・管理<small>（年間・月額の契約）</small></div>
+      <div class="svc-grid">
+        <div class="svc-card lead" id="svc-watch">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M6 50V22M18 50V22M30 50V22M42 50V22M6 28h36M6 44h36"/><path d="M14 56c2-4 4-6 8-6M24 58c2-4 4-6 8-6"/><circle cx="48" cy="22" r="9"/><path d="M54.5 28.5L60 34"/></svg></div>
+          <div>
+            <div class="svc-phase">WATCH — 巡回</div>
+            <div class="svc-title">巡回（見守り会員）</div>
+            <div class="svc-price">¥36,000〜 <small>/ 年（年6回）・¥60,000 / 年（年12回）</small></div>
+            <div class="svc-desc">筑豊地域（田川・飯塚など）の発電所が対象です（低圧・高圧とも）。フェンスの周り、侵入の痕跡、雑草の茂り具合、異変を外から見回り、写真で報告します。雑草が茂るとフェンス際が死角になり、侵入しやすく痕跡も見つけにくくなります。大雨・台風の後も、福岡県内なら最短当日に確認します。</div>
+            <span class="svc-badge">年間契約</span>
+            <a href="report_sample.html#watch" class="svc-badge">報告サンプルを見る →</a>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 54h48M8 54V10"/><path d="M14 44l10-12 9 6 14-18"/><circle cx="47" cy="20" r="3"/><path d="M40 46l5 5 10-12"/></svg></div>
+          <div>
+            <div class="svc-phase">ONGOING — 継続管理</div>
+            <div class="svc-title">定期モニタリング顧問契約</div>
+            <div class="svc-price">¥30,000〜 <small>/ 月</small></div>
+            <div class="svc-desc">発電データの分析と、O&amp;M業者の報告書の第三者チェック、複数の発電所のまとめ。管理は業者に任せたまま、独立した「見張り役」になります。全国対応（遠隔が中心）。</div>
+            <span class="svc-badge">月次継続</span>
+          </div>
+        </div>
       </div>
-      <div class="svc-card lead" id="svc-field">
-        <div class="svc-phase">FIELD — スポット対応</div>
-        <div class="svc-title">スポット対応（発電停止・通信異常の駆けつけ）</div>
-        <div class="svc-price">¥20,000〜 <small>/ 1回（福岡県内・遠方は交通費実費）</small></div>
-        <div class="svc-desc">遠隔監視のアラートが出た、監視が止まった、売電量が急に減った。こうしたシステムの不具合を、1回ごとのご依頼で確かめます。契約は不要です。福岡県内なら最短当日に現地へ伺います。パワコン・出力制御ユニット・通信機器の状態確認、通信機器の再起動、出力制御スケジュールの再取得、原因の特定まで行い、写真付きで報告します。メーカー・電力会社への連絡も代行します。<br><br>部品交換が必要な場合は、内容と費用を先にお伝えします。機器で利益は取りません。出張などですぐに伺えない日は、ご連絡の際に到着の目安をお伝えします。</div>
-        <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="svc-badge" style="display:inline-flex;text-decoration:none;">▶ 駆けつけを依頼する</a>
-        <a href="report_sample.html#dispatch" class="svc-badge" style="display:inline-flex;text-decoration:none;">報告書サンプルを見る →</a>
-      </div>
-      <div class="svc-card" id="svc-watch">
-        <div class="svc-phase">WATCH — 見守り</div>
-        <div class="svc-title">巡回（見守り会員）</div>
-        <div class="svc-price">¥36,000〜 <small>/ 年（年6回）・¥60,000 / 年（年12回）</small></div>
-        <div class="svc-desc">田川・飯塚など筑豊地域（福岡県中部）の発電所が対象です（低圧・高圧とも）。フェンスの周り、侵入の痕跡、雑草の茂り具合、異変を外から見回り、写真で報告します。雑草が茂るとフェンス際が死角になり、侵入しやすく痕跡も見つけにくくなるため、天候で草の伸び方が変わる年は特に大切です。年12回（毎月）と年6回（繁茂期に寄せるか2か月ごとかはご相談）から選べます。大雨・台風の後も、福岡県内なら最短当日に確認します（出張などで遅れる日は目安をお伝えします）。</div>
-        <span class="svc-badge">年間契約</span>
-        <a href="report_sample.html#watch" class="svc-badge" style="display:inline-flex;text-decoration:none;">月次報告サンプルを見る →</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-phase">ONGOING — 継続管理</div>
-        <div class="svc-title">定期モニタリング顧問契約</div>
-        <div class="svc-price">¥30,000〜 <small>/ 月</small></div>
-        <div class="svc-desc">月次で発電データ確認・O&M業者レポートの第三者チェック・横断サマリーレポートの提供。管理を業者に任せながら、独立した「見張り役」として機能します。</div>
-        <span class="svc-badge">月次継続</span>
-      </div>
-      <div class="svc-card">
-        <div class="svc-phase">EXIT — 出口対応</div>
-        <div class="svc-title">売却・融資・承継 DD対応</div>
-        <div class="svc-price">¥200,000〜 <small>/ 案件</small></div>
-        <div class="svc-desc">FIT終了・売却・リファイナンス・相続の際に必要な第三者評価レポート。買い手・銀行・税理士への説明資料として使える正式ドキュメントを発行します。</div>
-        <span class="svc-badge">要相談</span>
+    </div>
+
+    <!-- ③ 必要なときに -->
+    <div class="svc-group rv rv-d1">
+      <div class="svc-group-h"><span class="svc-group-n">3</span>必要なときに<small>（1回ごと・契約不要）</small></div>
+      <div class="svc-grid svc-grid-3">
+        <div class="svc-card lead" id="svc-field">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="10" y="12" width="32" height="42" rx="3"/><path d="M16 22h20M16 30h20"/><circle cx="26" cy="43" r="4"/><path d="M50 10l-6 12h8l-6 12"/></svg></div>
+          <div>
+            <div class="svc-phase">FIELD — スポット対応</div>
+            <div class="svc-title">スポット対応（発電停止・通信異常の駆けつけ）</div>
+            <div class="svc-price">¥20,000〜 <small>/ 1回（福岡県内・遠方は交通費実費）</small></div>
+            <div class="svc-desc">監視のアラート、監視の途絶え、売電量の急な低下を現地で確かめます。パワコン・通信機器の確認と再起動、原因の特定まで行い、写真付きで報告します。福岡県内なら最短当日。部品交換が必要な場合は、内容と費用を先にお伝えします。機器で利益は取りません。</div>
+            <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="svc-badge">▶ 駆けつけを依頼する</a>
+            <a href="report_sample.html#dispatch" class="svc-badge">報告サンプルを見る →</a>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="12" y="10" width="34" height="46" rx="3"/><path d="M22 6h14v8H22z"/><path d="M19 26h20M19 34h20M19 42h12"/><circle cx="46" cy="44" r="8"/><path d="M52 50l6 6"/></svg></div>
+          <div>
+            <div class="svc-phase">CORE — 現地調査</div>
+            <div class="svc-title">安全基準適合調査レポート</div>
+            <div class="svc-price">¥50,000〜 <small>/ 1案件</small></div>
+            <div class="svc-desc">現地目視・写真・データ分析による第三者評価レポート。盗難リスク・設備劣化・O&amp;M品質を数値化し、保険会社・金融機関への提出にも使えます。</div>
+            <a href="survey_detail.html" class="svc-badge">詳細・お申し込み →</a>
+            <a href="report_sample.html#survey" class="svc-badge">報告サンプルを見る →</a>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 8h26l10 10v38H14z"/><path d="M40 8v10h10"/><path d="M21 44l7-8 6 5 9-11"/><path d="M21 24h12"/></svg></div>
+          <div>
+            <div class="svc-phase">EXIT — 出口対応</div>
+            <div class="svc-title">売却・融資・承継の評価</div>
+            <div class="svc-price">¥200,000〜 <small>/ 案件</small></div>
+            <div class="svc-desc">FIT終了・売却・リファイナンス・相続の際の第三者評価レポート。買い手・銀行・税理士への説明資料として使えます。</div>
+            <span class="svc-badge">要相談</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
