@@ -120,7 +120,7 @@ body {
 ═══════════════════════════════════════ */
 .hero {
   min-height: 88vh;
-  background: var(--fg) url('hero-solar.svg') center bottom / cover no-repeat;
+  background: var(--fg) url('hero-photo.jpg') 60% 60% / cover no-repeat;
   position: relative;
   display: flex; align-items: stretch;
   overflow: hidden;
@@ -131,7 +131,7 @@ body {
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(10,32,22,0.94) 0%, rgba(10,32,22,0.82) 38%, rgba(10,32,22,0.35) 70%, rgba(10,32,22,0.08) 100%);
+  background: linear-gradient(90deg, rgba(14,22,16,0.78) 0%, rgba(14,22,16,0.55) 38%, rgba(14,22,16,0.12) 66%, rgba(14,22,16,0) 100%);
 }
 
 /* グリッド線 */
@@ -168,6 +168,7 @@ body {
   line-height: 1.45; margin-bottom: 28px;
 }
 .hero-h1 .nw { white-space: nowrap; }
+.hero-h1, .hero-hook, .hero-eyebrow-text { text-shadow: 0 2px 12px rgba(0,0,0,0.55); }
 .hero-h1 .accent {
   position: relative; display: inline-block;
 }
@@ -660,7 +661,8 @@ footer {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-card { display: none; }
   .hero-left { padding: 56px 0; }
-  .hero::before { background: linear-gradient(180deg, rgba(10,32,22,0.88) 0%, rgba(10,32,22,0.66) 55%, rgba(10,32,22,0.3) 100%); }
+  .hero { background-position: 42% 50%; }
+  .hero::before { background: linear-gradient(180deg, rgba(14,22,16,0.5) 0%, rgba(14,22,16,0.6) 45%, rgba(14,22,16,0.25) 100%); }
   .hero-h1 { font-size: min(5.8vw, 1.8rem); }
   .hero-hook { font-size: 0.95rem; }
   .hero-inner { padding: 0 16px; }
