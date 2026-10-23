@@ -25,6 +25,14 @@
     } catch (e) {}
     gtag('config', 'G-D87944HHWV', internal ? { traffic_type: 'internal' } : {});
   })();
+  // Count clicks on "send mail" links (mailto:) as contact_email_click.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    var subject = '';
+    try { subject = decodeURIComponent((a.getAttribute('href').split('subject=')[1] || '').split('&')[0]); } catch (err) {}
+    gtag('event', 'contact_email_click', { link_text: (a.textContent || '').trim().slice(0, 40), mail_subject: subject, page_path: location.pathname });
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
