@@ -458,6 +458,41 @@ body {
 .why-src a { color: var(--gold); }
 
 /* ═══════════════════════════════════════
+   NATURE（自然と共生する発電所管理）
+═══════════════════════════════════════ */
+.nature { background: var(--fg-light); }
+.nature-intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center; margin-bottom: 56px;
+}
+.nature-zones {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 2px;
+  background: rgba(26,71,49,0.12); margin-bottom: 24px;
+}
+.nature-zone { background: var(--white); padding: 32px 32px 28px; }
+.nature-zone-k {
+  font-family: var(--sans); font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px;
+}
+.nature-zone-t { font-family: var(--serif-jp); font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
+.nature-zone-b { font-size: 0.82rem; color: var(--ink-mid); line-height: 2; font-weight: 300; }
+.nature-cards {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  background: rgba(26,71,49,0.12);
+}
+.nature-card { background: var(--white); padding: 36px 32px; }
+.nature-card-n { font-family: var(--serif-en); font-size: 2.2rem; color: var(--fg-mid); opacity: 0.5; font-weight: 600; line-height: 1; margin-bottom: 16px; }
+.nature-card-t { font-family: var(--serif-jp); font-size: 0.95rem; font-weight: 700; color: var(--fg); margin-bottom: 12px; }
+.nature-card-b { font-size: 0.8rem; color: var(--ink-mid); line-height: 2; font-weight: 300; }
+.nature-note { margin-top: 32px; font-size: 0.72rem; color: var(--ink-mid); line-height: 1.9; font-weight: 300; }
+.nature-note a { color: var(--fg-mid); }
+@media (max-width: 960px) {
+  .nature-intro { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+  .nature-zones, .nature-cards { grid-template-columns: 1fr; }
+  .nature-zone, .nature-card { padding: 28px 24px; }
+}
+
+/* ═══════════════════════════════════════
    SERVICES
 ═══════════════════════════════════════ */
 .services { background: var(--paper); }
@@ -919,6 +954,57 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- ░░░ WITH NATURE ░░░ -->
+<section class="nature sec" id="nature">
+  <div class="wrap">
+    <div class="nature-intro rv">
+      <div>
+        <div class="sec-tag">
+          <div class="sec-tag-line"></div>
+          <span class="sec-tag-text">With Nature</span>
+        </div>
+        <div class="gold-rule"></div>
+        <h2 class="sec-h2">刈る場所と、残す場所。<br>自然と共生する発電所の管理</h2>
+      </div>
+      <p class="sec-body">雑草は、放っておけば侵入の入口になります。けれども、すべてを除草剤や防草シートで消してしまうことだけが答えではありません。2026年11月、東京都立大学の研究グループは、パネルの下を草刈りで管理している発電所に、周りの森の縁とよく似た植物の群れが自然に育っていたと発表しました。防犯のために刈る場所と、自然のために残す場所を分ける。フラクタル・グリーンは、そうした管理を提案していきます。</p>
+    </div>
+
+    <div class="nature-zones rv rv-d1">
+      <div class="nature-zone">
+        <div class="nature-zone-k">Keep short — 短く刈る</div>
+        <div class="nature-zone-t">フェンス際・通路・機器の周り</div>
+        <div class="nature-zone-b">死角をつくらず、侵入の痕跡を見つけやすくするために、こまめに低く刈ります。パワコンや接続箱の周りも、点検と火災予防のために短く保ちます。</div>
+      </div>
+      <div class="nature-zone">
+        <div class="nature-zone-k">Let it grow — 植生を残す</div>
+        <div class="nature-zone-t">パネルの下・パネルの間</div>
+        <div class="nature-zone-b">発電の妨げにならない高さを保ちながら、草刈りで植生を残します。地面をコンクリートや防草シートで覆わず、地域の草花が育つ場所として生かします。</div>
+      </div>
+    </div>
+
+    <div class="nature-cards rv rv-d2">
+      <div class="nature-card">
+        <div class="nature-card-n">01</div>
+        <div class="nature-card-t">パネルの下に、森の縁と同じ草花</div>
+        <div class="nature-card-b">岐阜県郡上市の約169haの発電所を調べたところ、パネルの下には林縁（森の縁）に似た植物の群れが自然に育ち、種の多様さも林縁と同じくらいでした。森から離れた中央部でも林縁の植物が見つかり、種が施設全体に届いていると考えられています。</div>
+      </div>
+      <div class="nature-card">
+        <div class="nature-card-n">02</div>
+        <div class="nature-card-t">「受動的エコボルタイクス」という考え方</div>
+        <div class="nature-card-b">発電と生態系の保全を両立させる考え方は「エコボルタイクス」と呼ばれ、欧米で研究が進んでいます。研究グループは、特別な植栽をせず、草刈りなどの管理で自然に育つ植生を生かす発電所を「受動的エコボルタイクス」として提案しています。</div>
+      </div>
+      <div class="nature-card">
+        <div class="nature-card-n">03</div>
+        <div class="nature-card-t">オーナーにとっての意味</div>
+        <div class="nature-card-b">いまの管理のまま、刈る場所と高さを決めるだけで始められます。地域の自然に配慮していることは、近隣の方への説明や、将来の売却・承継のときにも、発電所の管理状態を伝える材料になります。巡回では、草の伸び方を場所ごとに見て報告します。</div>
+      </div>
+    </div>
+
+    <p class="nature-note rv rv-d3">※ 研究は森林に囲まれた大規模な発電所を対象にしたもので、立地によって当てはまらない場合があります。どの生き物にどう影響するかは、研究グループが今後評価するとしています。<br>出典：中谷美晴ほか「Passive Ecovoltaics: Solar power plants as semi-natural ecosystems via spontaneous succession in forest landscapes」Journal of Environmental Management（2026）／<a href="https://univ-journal.jp/1003238/" target="_blank" rel="noopener">大学ジャーナルオンライン（2026年11月21日）</a></p>
+  </div>
+</section>
+
 <!-- ░░░ SERVICES ░░░ -->
 <section class="services sec" id="services">
   <div class="wrap">
