@@ -458,6 +458,56 @@ body {
 .why-src a { color: var(--gold); }
 
 /* ═══════════════════════════════════════
+   PHILOSOPHY（企業理念）
+═══════════════════════════════════════ */
+.philo { background: var(--paper); text-align: center; }
+.philo .nw { display: inline-block; }
+.philo .sec-tag { justify-content: center; }
+.philo .gold-rule { margin: 0 auto 28px; }
+.philo-lead {
+  font-family: var(--serif-jp); font-weight: 700; color: var(--fg);
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem); line-height: 1.6; margin-bottom: 36px;
+}
+.philo-body { max-width: 720px; margin: 0 auto; text-align: left; }
+.philo-body p { font-size: 0.9rem; line-height: 2.2; color: var(--ink-mid); font-weight: 300; margin-bottom: 1.2em; }
+.philo-body strong { color: var(--fg); font-weight: 500; }
+.philo-sub {
+  font-family: var(--serif-jp); font-size: 1.15rem; font-weight: 700; color: var(--fg);
+  margin: 72px 0 8px;
+}
+.philo-sub-k { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
+.philo-vision { font-size: 0.88rem; color: var(--ink-mid); line-height: 2.1; font-weight: 300; max-width: 640px; margin: 12px auto 32px; }
+.philo-cycle {
+  list-style: none; padding: 0; margin: 0 auto; max-width: 980px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px;
+}
+.philo-cycle li {
+  position: relative; background: var(--white); border-top: 2px solid var(--fg-mid);
+  padding: 22px 14px 20px;
+}
+.philo-cycle li:not(:last-child)::after {
+  content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%);
+  color: var(--gold); font-size: 1rem;
+}
+.philo-cycle-t { font-family: var(--serif-jp); font-weight: 700; color: var(--fg); font-size: 1rem; margin-bottom: 6px; }
+.philo-cycle-b { font-size: 0.74rem; color: var(--ink-mid); line-height: 1.8; font-weight: 300; }
+.philo-cycle-back { font-size: 0.78rem; color: var(--fg-mid); margin-top: 16px; }
+.philo-values {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 32px;
+  background: rgba(26,71,49,0.12); text-align: left;
+}
+.philo-value { background: var(--white); padding: 32px 28px; }
+.philo-value-n { font-family: var(--serif-en); font-size: 2rem; color: var(--gold); opacity: 0.7; line-height: 1; margin-bottom: 14px; }
+.philo-value-t { font-family: var(--serif-jp); font-size: 0.98rem; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
+.philo-value-b { font-size: 0.8rem; color: var(--ink-mid); line-height: 2; font-weight: 300; }
+@media (max-width: 960px) {
+  .philo-cycle { grid-template-columns: 1fr; gap: 22px; max-width: 420px; }
+  .philo-cycle li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -21px; transform: translateX(-50%); }
+  .philo-values { grid-template-columns: 1fr; }
+  .philo-sub { margin-top: 56px; }
+}
+
+/* ═══════════════════════════════════════
    NATURE（自然と共生する発電所管理）
 ═══════════════════════════════════════ */
 .nature { background: var(--fg-light); }
@@ -793,6 +843,7 @@ footer {
   <a href="#" class="hd-logo">フラクタル・<span>グリーン</span><small>FRACTAL GREEN</small></a>
   <nav class="hd-nav">
     <a href="#story" class="hd-link">代表について</a>
+    <a href="#philosophy" class="hd-link">理念</a>
     <a href="#services" class="hd-link">サービス</a>
     <a href="#flow" class="hd-link">ご利用の流れ</a>
     <a href="report_sample.html" class="hd-link">報告書サンプル</a>
@@ -906,6 +957,59 @@ footer {
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ PHILOSOPHY ░░░ -->
+<section class="philo sec" id="philosophy">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">
+        <div class="sec-tag-line"></div>
+        <span class="sec-tag-text">Philosophy</span>
+        <div class="sec-tag-line"></div>
+      </div>
+      <div class="gold-rule"></div>
+      <p class="philo-lead"><span class="nw">発電所を守り、</span><br><span class="nw">その先の自然を、</span><span class="nw">未来へつなぐ。</span></p>
+    </div>
+    <div class="philo-body rv rv-d1">
+      <p>太陽光発電は、太陽という自然の恵みから電気をつくる仕事です。その発電所が、自然をないがしろにしたまま電気をつくり続けることは、自然を未来へつないでいくうえで、決して得策ではありません。</p>
+      <p>発電所の管理とメンテナンスは、もちろん私たちの本分です。そのうえで、<strong>自然の中で発電させてもらう人間の責任として、発電に影響が出ない範囲で、敷地の中だけでも自然を守り、育てていきたい。</strong>それが、フラクタル・グリーンがこの仕事に携わる理由です。</p>
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="philo-sub"><span class="philo-sub-k">Vision</span><br><span class="nw">パネルの下が、</span><span class="nw">となりの森と同じ景色になること</span></div>
+      <p class="philo-vision">草花が咲き、虫が集まり、実がなり、また芽吹く。ミツバチなどのハナバチの蜜源となり、周りの森から種が届き、パネルの下が近隣の森と同じような環境になる。私たちは、そんな発電所を理想としています。</p>
+      <ol class="philo-cycle" aria-label="発電所の中でめぐる自然の循環">
+        <li><div class="philo-cycle-t">草花が咲く</div><div class="philo-cycle-b">パネルの下と間に、地域の草花が育つ</div></li>
+        <li><div class="philo-cycle-t">虫が集まる</div><div class="philo-cycle-b">ミツバチなどのハナバチが、蜜と花粉を求めて訪れる</div></li>
+        <li><div class="philo-cycle-t">受粉する</div><div class="philo-cycle-b">虫が花から花へ、花粉を運ぶ</div></li>
+        <li><div class="philo-cycle-t">実がなる</div><div class="philo-cycle-b">草花が実を結び、鳥や小さな生き物の糧になる</div></li>
+        <li><div class="philo-cycle-t">また芽吹く</div><div class="philo-cycle-b">こぼれた種と森から届く種が、次の季節に芽を出す</div></li>
+      </ol>
+      <p class="philo-cycle-back">↻ この循環が、毎年めぐる発電所へ</p>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="philo-sub"><span class="philo-sub-k">Our Promise</span><br>3つの約束</div>
+      <div class="philo-values">
+        <div class="philo-value">
+          <div class="philo-value-n">01</div>
+          <div class="philo-value-t">発電と安全を、いちばんに</div>
+          <div class="philo-value-b">発電・防犯・防火に影響が出る草は、必ず刈ります。自然を理由に、発電所の管理を緩めることはしません。</div>
+        </div>
+        <div class="philo-value">
+          <div class="philo-value-n">02</div>
+          <div class="philo-value-t">刈る場所と、残す場所を分ける</div>
+          <div class="philo-value-b">敷地を一律に刈り払うのではなく、フェンス際や機器の周りは短く、パネルの下は草花を残す。場所ごとに管理を分けます。</div>
+        </div>
+        <div class="philo-value">
+          <div class="philo-value-n">03</div>
+          <div class="philo-value-t">ありのままを、記録して伝える</div>
+          <div class="philo-value-b">設備のことも自然のことも、写真と記録で残します。行ったことも、行っていないことも、そのまま報告書に書きます。</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
