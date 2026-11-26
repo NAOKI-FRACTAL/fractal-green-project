@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D87944HHWV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Owner's own devices: open any page once with ?fg_internal=1 (undo with ?fg_internal=0).
+  // Marked hits carry traffic_type=internal and are dropped by the GA4 "Internal Traffic" data filter.
+  (function () {
+    var internal = false;
+    try {
+      var params = new URLSearchParams(location.search);
+      var flag = params.get('fg_internal');
+      if (flag === '1') localStorage.setItem('fg_internal', '1');
+      if (flag === '0') localStorage.removeItem('fg_internal');
+      if (flag !== null) {
+        params.delete('fg_internal');
+        var qs = params.toString();
+        history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+      }
+      internal = localStorage.getItem('fg_internal') === '1';
+    } catch (e) {}
+    gtag('config', 'G-D87944HHWV', internal ? { traffic_type: 'internal' } : {});
+  })();
+  // Count clicks on "send mail" links (mailto:) as contact_email_click.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    var subject = '';
+    try { subject = decodeURIComponent((a.getAttribute('href').split('subject=')[1] || '').split('&')[0]); } catch (err) {}
+    gtag('event', 'contact_email_click', { link_text: (a.textContent || '').trim().slice(0, 40), mail_subject: subject, page_path: location.pathname });
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業概要｜フラクタル・グリーン</title>
+<meta name="description" content="フラクタル・グリーンの事業概要です。所在地、事業内容、対応エリア、資格・登録を掲載しています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fractal-green-project.jp/about.html">
+<meta property="og:title" content="事業概要｜フラクタル・グリーン">
+<meta property="og:description" content="フラクタル・グリーンの所在地、事業内容、対応エリア、資格・登録。">
+<meta property="og:image" content="https://fractal-green-project.jp/ogp-image.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="フラクタル・グリーン（FRACTAL GREEN）">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://fractal-green-project.jp/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fg: #1A4731; --fg-mid: #2D7A4F; --fg-light: #E8F5EE; --gold: #B8973A;
+  --ink: #1C1C18; --ink-mid: #4A4A44; --ink-faint: #9A9A92; --paper: #F8F5EF; --white: #FFFFFF;
+  --serif-jp: 'Shippori Mincho B1', serif; --serif-en: 'Cormorant Garamond', serif; --sans: 'Noto Sans JP', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.8; }
+.hd { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--fg); padding: 14px 28px; }
+.logo { font-family: var(--serif-jp); font-weight: 700; color: #fff; text-decoration: none; font-size: 1.05rem; line-height: 1.4; white-space: nowrap; }
+.logo span { color: var(--gold); }
+.logo small { display: block; font-family: var(--serif-en); font-size: 0.62rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.55); }
+.back { color: rgba(255,255,255,0.8); font-size: 0.78rem; text-decoration: none; }
+.back:hover { color: var(--gold); }
+.title { background: var(--fg); color: #fff; text-align: center; padding: 48px 20px 56px; border-top: 1px solid rgba(255,255,255,0.08); }
+.tag { font-size: 0.65rem; letter-spacing: 0.24em; color: var(--gold); text-transform: uppercase; }
+.title h1 { font-family: var(--serif-jp); font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; margin-top: 10px; }
+.title p { max-width: 640px; margin: 18px auto 0; font-size: 0.9rem; line-height: 2.1; font-weight: 300; color: rgba(255,255,255,0.85); text-align: left; }
+main { max-width: 860px; margin: 0 auto; padding: 48px 20px 64px; }
+.card { background: var(--white); border-top: 3px solid var(--fg-mid); padding: 8px 32px; box-shadow: 0 8px 28px rgba(26,71,49,0.07); }
+.row { display: grid; grid-template-columns: 8em 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(26,71,49,0.12); scroll-margin-top: 24px; }
+.row:last-child { border-bottom: none; }
+.row dt { font-size: 0.84rem; font-weight: 500; color: var(--fg); }
+.row dd { font-size: 0.92rem; color: var(--ink-mid); font-weight: 300; line-height: 1.9; }
+.row dd ul { list-style: none; }
+.row dd li { padding-left: 1.1em; position: relative; }
+.row dd li::before { content: ''; position: absolute; left: 0; top: 0.85em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.row dd a { color: var(--fg-mid); word-break: break-all; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+.btn { display: inline-block; font-size: 0.84rem; text-decoration: none; padding: 14px 30px; }
+.btn-gold { background: var(--gold); color: var(--fg); font-weight: 500; }
+.btn-line { border: 1px solid var(--fg-mid); color: var(--fg); background: var(--white); }
+footer { background: #10281c; color: rgba(255,255,255,0.65); text-align: center; font-size: 0.76rem; padding: 32px 20px; line-height: 2; }
+footer a { color: rgba(255,255,255,0.75); }
+@media (max-width: 560px) {
+  .hd { padding: 12px 16px; }
+  .card { padding: 4px 18px; }
+  .row { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
+  .btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+<header class="hd">
+  <a href="./" class="logo">フラクタル・<span>グリーン</span><small>FRACTAL GREEN</small></a>
+  <a href="./" class="back">← トップページに戻る</a>
+</header>
+
+<div class="title">
+  <div class="tag">About Us</div>
+  <h1>事業概要</h1>
+  <p>福岡県田川市を拠点に、太陽光発電所の管理を行っています。保守管理（O&amp;M）、点検、駆け付け、除草から、土木・電気の工事まで対応します。</p>
+</div>
+
+<main>
+  <dl class="card">
+    <div class="row"><dt>屋号</dt><dd>フラクタル・グリーン（FRACTAL GREEN）</dd></div>
+    <div class="row"><dt>代表者</dt><dd>酒井 直樹</dd></div>
+    <div class="row"><dt>所在地</dt><dd>福岡県田川市猪国2559（いいかねPalette内）</dd></div>
+    <div class="row"><dt>事業内容</dt><dd><ul>
+      <li>太陽光発電所の保守管理（O&amp;M）</li>
+      <li>点検</li>
+      <li>駆け付け対応</li>
+      <li>除草・草木の管理</li>
+      <li>電気工事</li>
+      <li>土木工事</li>
+    </ul></dd></div>
+    <div class="row"><dt>対応エリア</dt><dd>田川市から半径50km圏内は最短当日。九州・山口は日程を調整して対応します。</dd></div>
+    <div class="row" id="creds"><dt>資格・登録</dt><dd><ul>
+      <li>第一種電気工事士</li>
+      <li>1級電気工事施工管理技士補</li>
+      <li>1級土木施工管理技士</li>
+      <li>登録電気工事業者</li>
+    </ul></dd></div>
+    <div class="row"><dt>メール</dt><dd><a href="mailto:info@fractal-green-project.jp">info@fractal-green-project.jp</a></dd></div>
+  </dl>
+
+  <div class="actions">
+    <a class="btn btn-gold" href="mailto:info@fractal-green-project.jp?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87">▶ 無料で相談する</a>
+    <a class="btn btn-line" href="./#partner">O&amp;M会社・施工会社の皆様へ</a>
+  </div>
+</main>
+
+<footer>
+  フラクタル・グリーン（FRACTAL GREEN）<br>
+  酒井 直樹　福岡県田川市猪国2559（いいかねPalette内）<br>
+  <a href="privacy.html">プライバシーポリシー</a><br>
+  © 2025 フラクタル・グリーン. All rights reserved.
+</footer>
+</body>
+</html>

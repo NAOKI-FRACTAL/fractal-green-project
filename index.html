@@ -36,19 +36,20 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>フラクタル・グリーン（FRACTAL GREEN）｜太陽光発電所オーナーの相談相手 酒井直樹</title>
-<meta name="description" content="O&M8年・EPC3年の現場経験を持つ第三者調査機関。工事・機器の販売を目的としない中立の立場で、福岡県田川市を拠点に現地調査から発電停止・通信停止の駆けつけ対応まで、太陽光発電所オーナーの資産を守ります。">
+<title>フラクタル・グリーン（FRACTAL GREEN）｜太陽光発電所の点検・駆け付け・除草・補修（福岡県）</title>
+<meta name="description" content="福岡県田川市を拠点に、太陽光発電所の保守管理、点検、駆け付け、除草、電気・土木工事を行っています。九州・山口に対応します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fractal-green-project.jp/">
-<meta property="og:title" content="フラクタル・グリーン｜太陽光発電所オーナーの相談相手 酒井直樹">
-<meta property="og:description" content="O&M8年・EPC3年の現場経験を持つ第三者調査機関。工事・機器の販売を目的としない中立の立場で、福岡県田川市を拠点に現地調査から発電停止・通信停止の駆けつけ対応まで、太陽光発電所オーナーの資産を守ります。">
+<meta property="og:title" content="フラクタル・グリーン｜太陽光発電所の管理（点検・駆け付け・除草・補修）">
+<meta property="og:description" content="福岡県田川市を拠点に、太陽光発電所の保守管理、点検、駆け付け、除草、電気・土木工事を行っています。九州・山口に対応します。">
 <meta property="og:image" content="https://fractal-green-project.jp/ogp-image.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="フラクタル・グリーン（FRACTAL GREEN）">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="フラクタル・グリーン｜太陽光発電所オーナーの相談相手 酒井直樹">
-<meta name="twitter:description" content="O&M8年・EPC3年の現場経験を持つ第三者調査機関。工事・機器の販売を目的としない中立の立場で、福岡県田川市を拠点に現地調査から発電停止・通信停止の駆けつけ対応まで、太陽光発電所オーナーの資産を守ります。">
+<meta name="twitter:title" content="フラクタル・グリーン｜太陽光発電所の管理（点検・駆け付け・除草・補修）">
+<meta name="twitter:description" content="福岡県田川市を拠点に、太陽光発電所の保守管理、点検、駆け付け、除草、電気・土木工事を行っています。九州・山口に対応します。">
 <meta name="twitter:image" content="https://fractal-green-project.jp/ogp-image.jpg">
+
 <link rel="canonical" href="https://fractal-green-project.jp/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -213,8 +214,11 @@ body {
   font-size: 0.72rem; color: rgba(255,255,255,0.78);
   border: 1px solid rgba(184,151,58,0.45);
   background: rgba(10,32,22,0.45);
-  padding: 5px 12px; letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 }
+.hero-proof li a { display: block; color: inherit; text-decoration: none; padding: 9px 16px; }
+.hero-proof li a:hover { background: rgba(184,151,58,0.22); color: #fff; }
+#svc-main { scroll-margin-top: 90px; }
 
 /* クイックメニュー */
 .quick {
@@ -749,19 +753,150 @@ footer {
   footer { flex-direction: column; text-align: center; }
   .ft-info { text-align: center; }
 }
+
+/* ═══════════════════════════════════════
+   NEW TOP (prototype 2026-11-20)
+═══════════════════════════════════════ */
+.hero-sub { font-family: var(--serif-jp); font-size: clamp(1rem, 1.9vw, 1.3rem); font-weight: 700; line-height: 1.9; color: rgba(255,255,255,0.94); margin-bottom: 10px; text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 2px 16px rgba(0,0,0,0.6); }
+.hero-hook2 { font-size: 0.95rem; line-height: 1.9; color: rgba(255,255,255,0.85); margin-bottom: 32px; text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 2px 16px rgba(0,0,0,0.6); }
+.hero-link { display: inline-block; margin-top: 18px; color: #E9CF86; font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid rgba(233,207,134,0.5); padding-bottom: 2px; }
+.hero-link:hover { color: #fff; }
+
+.doors { background: var(--paper); }
+.doors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.door { background: var(--white); border: 1px solid rgba(26,71,49,0.12); border-top: 3px solid var(--gold); padding: 30px 28px 26px; display: flex; flex-direction: column; }
+.door-n { font-family: var(--serif-en); font-size: 1.6rem; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+.door-q { font-family: var(--serif-jp); font-size: 1.15rem; font-weight: 700; color: var(--fg); line-height: 1.6; margin-bottom: 10px; }
+.door-d { font-size: 0.86rem; line-height: 2; color: var(--ink-mid); font-weight: 300; margin-bottom: 18px; flex: 1; }
+.door-act { display: flex; flex-direction: column; gap: 8px; }
+.door .btn-gold { padding: 13px 20px; font-size: 0.8rem; }
+.door-sub { font-size: 0.74rem; color: var(--fg-mid); text-decoration: none; letter-spacing: 0.04em; }
+.door-sub:hover { text-decoration: underline; }
+
+.area { background: var(--white); }
+.area-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start; margin-top: 32px; }
+.area-map { position: relative; border: 1px solid rgba(26,71,49,0.15); background: var(--paper-2); }
+.area-map iframe { display: block; width: 100%; height: 400px; border: 0; }
+.area-cap { font-size: 0.7rem; color: var(--ink-faint); margin-top: 8px; line-height: 1.7; }
+.area-list dt { font-family: var(--serif-jp); font-weight: 700; color: var(--fg); font-size: 0.95rem; margin-top: 18px; }
+.area-list dt:first-child { margin-top: 0; }
+.area-list dd { font-size: 0.84rem; line-height: 1.95; color: var(--ink-mid); font-weight: 300; margin-top: 4px; }
+.area-note { margin-top: 22px; font-size: 0.82rem; line-height: 1.95; color: var(--ink-mid); background: var(--fg-light); padding: 14px 18px; border-left: 3px solid var(--fg-mid); }
+
+.thought { background: var(--fg); color: var(--white); }
+.thought-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.thought-video { position: relative; }
+.thought-video video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #0b1a12; border: 1px solid rgba(184,151,58,0.3); }
+.thought-cap { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 8px; }
+.thought-lead { font-family: var(--serif-jp); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.95; font-weight: 700; color: var(--white); margin-bottom: 22px; }
+.thought-p { font-size: 0.88rem; line-height: 2.1; color: rgba(255,255,255,0.72); font-weight: 300; margin-bottom: 14px; }
+.thought-sign { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.8; }
+.thought-sign b { font-family: var(--serif-jp); font-size: 1.05rem; color: var(--white); }
+
+.partner { background: var(--paper-2); padding: 72px 0; }
+.partner-in { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.partner-h { font-family: var(--serif-jp); font-size: 1.35rem; font-weight: 700; color: var(--fg); line-height: 1.6; margin-bottom: 12px; }
+.partner-p { font-size: 0.86rem; line-height: 2; color: var(--ink-mid); font-weight: 300; }
+.partner-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.partner-chips li { font-size: 0.72rem; color: var(--fg); border: 1px solid rgba(26,71,49,0.3); padding: 4px 10px; background: var(--white); }
+.partner .btn-gold { max-width: 340px; }
+.works { background: var(--paper); }
+.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.work-col { background: var(--white); border: 1px solid rgba(26,71,49,0.12); border-top: 3px solid var(--fg-mid); padding: 26px 26px 22px; }
+.work-h { font-family: var(--serif-jp); font-weight: 700; color: var(--fg); font-size: 1.05rem; margin-bottom: 14px; line-height: 1.6; }
+.work-h small { display: block; font-family: var(--sans); font-weight: 300; font-size: 0.72rem; color: var(--ink-faint); margin-top: 2px; }
+.work-num { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+.work-num b { font-family: var(--serif-jp); font-size: 2rem; color: var(--fg); line-height: 1.1; }
+.work-num span { font-size: 0.86rem; color: var(--ink-mid); }
+.work-list { list-style: none; }
+.work-list li { font-size: 0.88rem; line-height: 1.9; color: var(--ink-mid); padding: 6px 0; border-top: 1px solid rgba(26,71,49,0.08); }
+.work-list li:first-child { border-top: none; }
+.work-note { margin-top: 20px; font-size: 0.76rem; color: var(--ink-faint); line-height: 1.8; }
+.phil { background: var(--paper); }
+.phil-in { max-width: 760px; margin: 0 auto; text-align: center; }
+.phil-h { font-family: var(--serif-jp); font-size: clamp(1.5rem, 3.4vw, 2.3rem); font-weight: 800; color: var(--fg); line-height: 1.6; margin: 14px 0 26px; text-wrap: balance; }
+.phil-p { font-size: 0.9rem; line-height: 2.1; color: var(--ink-mid); font-weight: 300; text-align: left; margin-bottom: 14px; }
+.phil-p b { color: var(--fg); font-weight: 700; }
+.phil-sub { margin-top: 72px; text-align: center; }
+.phil-k { font-size: 0.62rem; letter-spacing: 0.22em; color: var(--gold); font-weight: 500; text-transform: uppercase; }
+.phil-t { font-family: var(--serif-jp); font-size: 1.2rem; font-weight: 700; color: var(--fg); margin: 6px 0 12px; line-height: 1.6; }
+.phil-d { max-width: 640px; margin: 0 auto; font-size: 0.88rem; line-height: 2; color: var(--ink-mid); font-weight: 300; }
+.cycle { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; margin: 36px auto 0; max-width: 1000px; }
+.cyc { position: relative; background: var(--white); border-top: 2px solid var(--fg-mid); padding: 16px 14px 18px; text-align: center; }
+.cyc:not(:last-child)::after { content: '→'; position: absolute; right: -19px; top: 44%; color: var(--gold); font-size: 1rem; }
+.cyc-t { font-family: var(--serif-jp); font-weight: 700; color: var(--fg); font-size: 0.98rem; margin-bottom: 6px; }
+.cyc-d { font-size: 0.76rem; line-height: 1.8; color: var(--ink-mid); font-weight: 300; }
+.cyc-loop { text-align: center; margin-top: 14px; font-size: 0.78rem; color: var(--fg-mid); }
+.promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 30px auto 0; max-width: 1100px; background: rgba(26,71,49,0.12); }
+.promise { background: var(--white); padding: 28px 26px 26px; text-align: left; }
+.promise-n { font-family: var(--serif-en); font-size: 1.5rem; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+.promise-t { font-family: var(--serif-jp); font-size: 1.02rem; font-weight: 700; color: var(--fg); margin-bottom: 10px; line-height: 1.6; }
+.promise-d { font-size: 0.82rem; line-height: 1.95; color: var(--ink-mid); font-weight: 300; }
+.phil-hero { max-width: 1100px; margin: 0 auto 44px; position: relative; }
+.phil-hero img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; object-position: 50% 60%; }
+.phil-cap { font-size: 0.7rem; color: var(--ink-faint); margin-top: 8px; text-align: right; line-height: 1.7; }
+.cyc-img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; margin: -4px 0 12px; }
+.promise { display: flex; flex-direction: column; }
+.promise-img { display: block; width: calc(100% + 52px); height: auto; margin: 20px -26px -26px; aspect-ratio: 16 / 10; object-fit: cover; }
+.promise-img-wrap { margin-top: auto; }
+.svc-grid.svc-grid-single { grid-template-columns: 1fr; }
+@media (min-width: 961px) {
+  .svc-grid-single .svc-card.has-photo { display: grid; grid-template-columns: 5fr 7fr; align-items: stretch; }
+  .svc-grid-single .svc-card.has-photo .svc-photo { width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: cover; }
+}
+#services { border-top: 1px solid rgba(26,71,49,0.14); }
+.creds-grid.creds-single { grid-template-columns: 1fr; }
+@media (min-width: 761px) { .creds-grid.creds-single .creds-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; } }
+.cta-h { margin-bottom: 32px; }
+.cta-diag { text-align: center; font-size: 0.8rem; margin-bottom: 22px; }
+.cta-diag a { color: rgba(255,255,255,0.72); text-underline-offset: 3px; }
+.svc-main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(26,71,49,0.12); }
+.svc-main { background: var(--white); border-top: 3px solid var(--fg-mid); padding: 26px 28px 28px; }
+.svc-main .svc-desc { margin-bottom: 0; }
+.svc-main-act { margin-top: 16px; text-align: center; }
+@media (max-width: 760px) { .svc-main-grid { grid-template-columns: 1fr; } .svc-main { padding: 22px 22px 24px; } }
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+.about-lead { font-size: 0.92rem; line-height: 2.1; color: var(--ink-mid); font-weight: 300; margin-top: 20px; }
+.about-list { border-top: 2px solid var(--fg-mid); }
+.about-row { display: grid; grid-template-columns: 7.5em 1fr; gap: 16px; padding: 14px 4px; border-bottom: 1px solid rgba(26,71,49,0.12); scroll-margin-top: 90px; }
+.about-row dt { font-size: 0.82rem; color: var(--fg); font-weight: 500; }
+.about-row dd { font-size: 0.88rem; line-height: 1.9; color: var(--ink-mid); font-weight: 300; }
+.about-row dd a { color: var(--fg-mid); }
+@media (max-width: 960px) { .about-grid { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 480px) { .about-row { grid-template-columns: 1fr; gap: 4px; } }
+.work-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; background: var(--white); border-left: 4px solid var(--gold); padding: 20px 26px; margin-bottom: 18px; }
+.work-total b { font-family: var(--serif-jp); font-size: 2.2rem; color: var(--fg); line-height: 1.2; }
+.work-total span { font-size: 0.86rem; color: var(--ink-mid); line-height: 1.8; }
+.about-short { max-width: 720px; margin: 0 auto; text-align: center; }
+.about-short .about-lead { text-align: left; }
+.about-more { margin-top: 24px; }
+.about-more a { display: inline-block; font-size: 0.84rem; color: var(--fg); border: 1px solid var(--fg-mid); padding: 13px 30px; text-decoration: none; }
+.about-more a:hover { background: var(--fg-light); }
+.ft-nav { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ft-nav a { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.06em; }
+.ft-nav a:hover { color: var(--gold); }
+@media (max-width: 960px) {
+  .doors-grid, .area-grid, .thought-grid, .partner-in, .works-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cycle, .promise-grid { grid-template-columns: 1fr; }
+  .cycle { gap: 26px; }
+  .cyc:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -22px; transform: translateX(-50%); }
+  .phil-sub { margin-top: 52px; }
+  .area-map iframe { height: 300px; }
+}
 </style>
 </head>
 <body>
-
 <!-- ░░░ HEADER ░░░ -->
 <header class="hd">
   <a href="#" class="hd-logo">フラクタル・<span>グリーン</span><small>FRACTAL GREEN</small></a>
   <nav class="hd-nav">
-    <a href="#story" class="hd-link">代表について</a>
-    <a href="#services" class="hd-link">サービス</a>
-    <a href="#flow" class="hd-link">ご利用の流れ</a>
-    <a href="report_sample.html" class="hd-link">報告書サンプル</a>
-    <a href="#diagnosis" class="hd-btn">無料60秒診断</a>
+    <a href="#doors" class="hd-link">お困りごと</a>
+    <a href="#area" class="hd-link">対応エリア</a>
+    <a href="#services" class="hd-link">サービスと料金</a>
+    <a href="#thought" class="hd-link">企業理念</a>
+    <a href="#partner" class="hd-link">協力会社様へ</a>
+    <a href="mailto:info@fractal-green-project.jp?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87" class="hd-btn">無料で相談する</a>
   </nav>
 </header>
 
@@ -771,154 +906,128 @@ footer {
     <div class="hero-left">
       <div class="hero-eyebrow rv">
         <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">福岡県の太陽光発電所オーナーへ</span>
+        <span class="hero-eyebrow-text">太陽光発電所の管理</span>
       </div>
-      <h1 class="hero-h1 rv rv-d1"><span class="nw">その発電所、</span><br><span class="nw">今日も順調に発電していますか。</span></h1>
-      <p class="hero-hook rv rv-d2">遠隔監視や売電明細を見て「あれ？」と思ったこと、ありませんか。<br>田川市から半径50km圏内なら最短当日、現地で確かめます。</p>
+      <h1 class="hero-h1 rv rv-d1"><span class="nw">太陽光発電所の、</span><br><span class="nw">点検・駆け付け・除草・補修。</span></h1>
+      <p class="hero-sub rv rv-d2">福岡県を拠点に、九州・山口の発電所の現場を、<br>誠意をもって見守ります。</p>
       <div class="hero-actions rv rv-d3">
-        <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-gold">▶ 発電・通信が止まったら</a>
-        <a href="solar_diagnosis.html" class="btn-ghost">無料60秒 盗難リスク診断 →</a>
+        <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E4%BB%98%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-gold">▶ 発電・通信が止まったら</a>
+        <a href="mailto:info@fractal-green-project.jp?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87" class="btn-ghost">無料で相談する →</a>
       </div>
+      <a href="solar_diagnosis.html" class="hero-link rv rv-d3">無料60秒 盗難リスク診断 →</a>
       <ul class="hero-proof rv rv-d4">
-        <li>O&amp;M・EPC 現場11年</li>
-        <li>ケーブル盗難 連続7回対応</li>
-        <li>第一種電気工事士</li>
-        <li>工事・機器の売り込みなし</li>
+        <li><a href="#svc-main">サービス内容を見る ↓</a></li>
+        <li><a href="#partner">O&amp;M会社・施工会社の皆様へ ↓</a></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ░░░ QUICK MENU ░░░ -->
-<nav class="quick" aria-label="主なサービス">
-  <a href="#svc-field" class="quick-item">
-    <span class="quick-k">スポット対応（駆けつけ）</span>
-    <span class="quick-v">¥20,000〜<small>/ 1回（田川市から20km圏内）</small></span>
-  </a>
-  <a href="#svc-watch" class="quick-item">
-    <span class="quick-k">巡回（見守り会員）</span>
-    <span class="quick-v">¥36,000〜<small>/ 年</small></span>
-  </a>
-  <a href="report_sample.html" class="quick-item">
-    <span class="quick-k">報告書サンプル</span>
-    <span class="quick-v">届く報告書を見る →</span>
-  </a>
-</nav>
-
-<!-- ░░░ STORY ░░░ -->
-<section class="story sec" id="story">
+<!-- ░░░ FGの紹介 ░░░ -->
+<section class="about sec" id="about">
   <div class="wrap">
-    <div class="story-grid">
-
-      <!-- 左：体験タイムライン -->
-      <div class="rv">
-        <div class="story-quote">
-          <span class="sq-num">7</span>
-          <p>同じ発電所で、数ヶ月の間に<br>ケーブル盗難が<strong>7回</strong>起きました。</p>
-        </div>
-        <div class="story-timeline">
-          <div class="tl-item">
-            <div class="tl-gutter">
-              <div class="tl-icon">⚡</div>
-              <div class="tl-line"></div>
-            </div>
-            <div class="tl-content">
-              <div class="tl-title">連続7回のケーブル盗難対応・対策工事</div>
-              <div class="tl-body">犯行グループは下見をして対策の穴を確認してから動く。場当たりの対処では追いつかないことを痛感した。その後の盗難対策工事の設計・施工管理まで担当。</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-gutter">
-              <div class="tl-icon">🏔</div>
-              <div class="tl-line"></div>
-            </div>
-            <div class="tl-content">
-              <div class="tl-title">土砂災害による発電所崩壊の復旧</div>
-              <div class="tl-body">発電所の一部が崩壊した土砂災害の復旧工事。設計から施工管理まで全工程を担当。被害規模と保険対応の難しさを現場で学んだ。</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-gutter">
-              <div class="tl-icon">🌊</div>
-              <div class="tl-line"></div>
-            </div>
-            <div class="tl-content">
-              <div class="tl-title">台風による発電所水没の復旧</div>
-              <div class="tl-body">台風被害で水没した発電所の復旧工事・施工管理を担当。初動の速さがオーナーごとに全く違った。事前に情報を持っているかどうかが決定的な差になった。</div>
-            </div>
-          </div>
+    <div class="about-short rv">
+      <div class="sec-tag" style="justify-content:center"><div class="sec-tag-line"></div><span class="sec-tag-text">About Us</span><div class="sec-tag-line"></div></div>
+      <h2 class="sec-h2">フラクタル・グリーンについて</h2>
+      <p class="about-lead">福岡県田川市を拠点に、太陽光発電所の管理を行っています。保守管理（O&amp;M）、点検、駆け付け、除草から、土木・電気の工事まで対応します。</p>
+      <p class="about-more"><a href="about.html">事業概要・資格を見る →</a></p>
+    </div>
+  </div>
+</section>
+<!-- ░░░ 3つの入口 ░░░ -->
+<section class="doors sec" id="doors">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">What We Do</span></div>
+      <div class="gold-rule"></div>
+      <h2 class="sec-h2">お困りごとから、お選びください</h2>
+    </div>
+    <div class="doors-grid rv rv-d1">
+      <div class="door">
+        <div class="door-n">01</div>
+        <div class="door-q">発電が止まった。<br>数字がおかしい。</div>
+        <p class="door-d">監視のアラート、通信の途絶え、売電量の急な低下。現地で確かめ、原因の特定と復旧のための対応を行います。</p>
+        <div class="door-act">
+          <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E4%BB%98%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-gold">▶ 駆け付けを相談する</a>
+          <a href="#svc-field" class="door-sub">スポット対応の料金の目安 →</a>
         </div>
       </div>
-
-      <!-- 右：ストーリーテキスト -->
-      <div class="story-text-block rv rv-d1">
-        <div class="sec-tag">
-          <div class="sec-tag-line"></div>
-          <span class="sec-tag-text">Founder's Story</span>
-        </div>
-        <div class="gold-rule"></div>
-        <h2 class="sec-h2">「オーナーに、正確な情報が<br>届いていない」</h2>
-        <p class="story-p">11年間、O&MとEPCの現場にいました。発電所の管理側として、何度も修繕・復旧・緊急対応を経験しました。</p>
-        <p class="story-p">そこで毎回感じたのが同じ問題です。業者は報告書を出す。でも本当のリスクをわかりやすく伝える人間がいない。オーナーは「大丈夫だと思う」という感覚で資産を任せています。</p>
-        <p class="story-p">O&M会社は自分が管理するサイトしか見ない。施工業者は工事を売りたい。メーカーは自社設備だけを評価する。だれもオーナーの側に立って、フラットに発電所全体を見ていない。</p>
-        <p class="story-p">その空白を埋めるためにフラクタル・グリーンを始めました。</p>
-        <p class="story-p">フラクタル・グリーンは工事や機器の販売を目的とせず、調査・現地対応・報告・施工管理の対価で成り立っています。工事が必要なときは、業者をオーナーが選べます。ご依頼があれば、協力会社への発注と施工管理（1級土木施工管理技士）をお引き受けし、費用の内訳を開示します。施工管理をした工事を、第三者として評価することはありません。</p>
-        <div class="story-sign">
-          <div class="story-sign-role">フラクタル・グリーン 代表</div>
-          <div class="story-sign-name">酒井 直樹</div>
-          <div class="story-sign-en">Naoki Sakai</div>
-          <div class="story-sign-addr">福岡県田川市猪国2559（いいかねPalette内）</div>
+      <div class="door">
+        <div class="door-n">02</div>
+        <div class="door-q">草・フェンス・防犯が、<br>気になる。</div>
+        <p class="door-d">雑草の茂り、フェンスの傷み、侵入の痕跡。定期的な巡回で外まわりを確かめ、除草や補修のご相談もお受けします。巡回の結果は、写真で報告します。</p>
+        <div class="door-act">
+          <a href="mailto:info@fractal-green-project.jp?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87" class="btn-gold">▶ 見守りを相談する</a>
+          <a href="#svc-watch" class="door-sub">巡回（見守り会員）の料金の目安 →</a>
         </div>
       </div>
-
+      <div class="door">
+        <div class="door-n">03</div>
+        <div class="door-q">状態を調べたい。<br>売却・融資の前に確認したい。</div>
+        <p class="door-d">現地調査と報告書で、発電所の状態をお伝えします。</p>
+        <div class="door-act">
+          <a href="solar_diagnosis.html" class="btn-gold">▶ 無料60秒 盗難リスク診断</a>
+          <a href="report_sample.html" class="door-sub">報告書サンプルを見る →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ░░░ FOR OWNERS ░░░ -->
-<section class="why sec" id="owners">
+<!-- ░░░ 対応エリア ░░░ -->
+<section class="area sec" id="area">
   <div class="wrap">
-    <div class="why-intro rv">
+    <div class="rv">
+      <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Service Area</span></div>
+      <div class="gold-rule"></div>
+      <h2 class="sec-h2">対応エリア</h2>
+    </div>
+    <div class="area-grid rv rv-d1">
       <div>
-        <div class="sec-tag">
-          <div class="sec-tag-line"></div>
-          <span class="sec-tag-text">For Owners</span>
+        <div class="area-map">
+          <iframe title="田川市（拠点）の地図" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=130.20%2C33.25%2C131.40%2C34.00&amp;layer=mapnik&amp;marker=33.6392%2C130.8076"></iframe>
         </div>
-        <div class="gold-rule"></div>
-        <h2 class="sec-h2 sec-h2-wh">発電所オーナーが、<br>いま知っておきたいこと</h2>
+        <p class="area-cap">地図の印が拠点の田川市（福岡県の内陸部、筑豊地域）です。© OpenStreetMap contributors</p>
       </div>
-      <p class="why-intro-right">盗難の増加、管理の義務、雑草と暗さ。どれも、発電所から離れて暮らすオーナーほど気づきにくいことです。公表されている情報と現場の経験から整理しました。</p>
-    </div>
-    <div class="why-cards rv rv-d1">
-      <div class="why-card">
-        <div class="why-card-n">01</div>
-        <div class="why-card-t">金属盗は、4年で約4倍に</div>
-        <div class="why-card-b">警察庁によると、金属盗の認知件数は令和2年の5,478件から、令和6年には20,701件に増えました。太陽光発電所の銅線ケーブルは主な標的の一つです。2025年には、盗まれた金属の売却を防ぐための法律も成立しました。</div>
+      <div>
+        <dl class="area-list">
+          <dt>基本エリア：田川市から半径20km</dt>
+          <dd>田川市・田川郡、飯塚市、嘉麻市、直方市、宮若市、桂川町、小竹町、鞍手町、行橋市・みやこ町の一部など。</dd>
+          <dt>拡大エリア：半径20〜50km</dt>
+          <dd>北九州市、苅田町、中間市、下関市、福岡市、宗像市、太宰府市、久留米市、小郡市、朝倉市、鳥栖市、中津市など。半径50km圏内なら、最短当日で現地に伺います。</dd>
+          <dt>それより遠方</dt>
+          <dd>九州・山口で、日程を調整してお伺いします（交通費実費）。</dd>
+        </dl>
+        <p class="area-note">遠方のオーナー様や、管理会社様も、まずはご相談ください。遠隔でできることと、現地が必要なことを、分けてお伝えします。</p>
       </div>
-      <div class="why-card">
-        <div class="why-card-n">02</div>
-        <div class="why-card-t">管理は、任せきりにできない</div>
-        <div class="why-card-b">2024年4月の再エネ特措法の改正で、認定事業者（オーナー）には、保守点検などの委託先を監督する義務が加わりました。10〜50kWの太陽光発電設備には、技術基準に適合した状態を保つ義務もあります。報告書を受け取るだけでなく、中身を確かめることが求められています。</div>
-      </div>
-      <div class="why-card">
-        <div class="why-card-n">03</div>
-        <div class="why-card-t">雑草と暗さは、侵入の入口</div>
-        <div class="why-card-b">フェンス際に茂った雑草は死角をつくり、侵入しやすくするうえ、侵入の痕跡も見つけにくくします。夜間の暗さも同じです。草の伸び方はその年の天候で変わるため、年1〜2回の除草では足りない年もあります。</div>
-      </div>
-    </div>
-    <div class="why-pledge rv rv-d2">
-      <p><strong>まず、ご自身で確かめられること</strong></p>
-      <ul class="why-check">
-        <li>フェンスの留め金具の外れ、切れ目、曲がりがないか</li>
-        <li>フェンス際やパネルの下の雑草が、人の膝より高くなっていないか</li>
-        <li>ケーブルがむき出しになっている所や、保護管の外れがないか</li>
-        <li>夜、発電所の周りが真っ暗になっていないか</li>
-        <li>発電所の標識が掲示され、読める状態か（20kW以上は掲示が必要）</li>
-      </ul>
-      <p class="why-src">ひとつでも気になれば、<a href="solar_diagnosis.html">無料60秒 盗難リスク診断</a>か、無料相談からどうぞ。<br>出典：警察庁「令和7年警察白書」、資源エネルギー庁（再エネ特措法・事業計画策定ガイドライン）</p>
     </div>
   </div>
 </section>
+
+<!-- ░░░ 私たちの想い（動画） ░░░ -->
+<section class="thought sec" id="thought">
+  <div class="wrap">
+    <div class="thought-grid">
+      <div class="thought-video rv">
+        <video controls preload="none" playsinline poster="media/film-poster.png">
+          <source src="media/fg_film2_short_720p.mp4" type="video/mp4">
+        </video>
+        <p class="thought-cap">イメージ映像（CG・約1分15秒・音声なし）</p>
+      </div>
+      <div class="rv rv-d1">
+        <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Philosophy</span></div>
+        <div class="gold-rule"></div>
+        <h2 class="thought-lead">太陽光発電所を、確実に管理する。<br>自然との共生も、大切に。</h2>
+        <p class="thought-p">発電事業者様がつくられた電気を無駄なく供給できるよう、発電所の運営を、誠意をもって支えます。</p>
+        <p class="thought-p">太陽光発電は、自然の環境の中で行う事業です。現場に向き合う中で、発電設備を守ることと同じように、まわりの自然環境への配慮も大切だと考えています。</p>
+        <p class="thought-p">大雨や台風などの災害のときは、早く状況を確かめ、被害を広げないことが重要です。日ごろの点検と備えを大切にし、迅速な対応に努めます。</p>
+        <div class="thought-sign">フラクタル・グリーン<br><b>酒井 直樹</b>　福岡県田川市猪国2559（いいかねPalette内）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ░░░ SERVICES ░░░ -->
 <section class="services sec" id="services">
   <div class="wrap">
@@ -928,69 +1037,51 @@ footer {
         <span class="sec-tag-text">Services</span>
       </div>
       <div class="gold-rule"></div>
-      <h2 class="sec-h2">サービス内容</h2>
+      <h2 class="sec-h2">サービスと料金の目安</h2>
     </div>
     <p class="svc-lead rv rv-d1">ご利用の場面ごとに、3つに分けています。料金はすべて税別です。</p>
-    <div class="svc-area rv rv-d1">
-      <div class="svc-area-h">対応エリア（田川市猪国から）</div>
-      <dl>
-        <dt>基本エリア：半径20km</dt><dd>田川市・田川郡、飯塚市、嘉麻市、直方市、宮若市、桂川町、小竹町、鞍手町、行橋市・みやこ町の一部など。巡回・スポット対応は料金表どおりです。</dd>
-        <dt>拡大エリア：半径20〜50km</dt><dd>北九州市、苅田町、中間市、下関市、福岡市、宗像市、太宰府市、久留米市、小郡市、朝倉市、鳥栖市、中津市など。巡回は1回3,000円、スポット対応は1回5,000円の出張加算があります。</dd>
-        <dt>それより遠方</dt><dd>現地調査・評価は九州・山口で日程を調整してお伺いします（交通費実費）。定期モニタリング顧問は全国対応です。</dd>
-      </dl>
-    </div>
 
-    <!-- ① まずは無料で -->
-    <div class="svc-group rv rv-d1">
-      <div class="svc-group-h"><span class="svc-group-n">1</span>まずは無料で</div>
-      <div class="svc-grid svc-grid-compact">
-        <div class="svc-card compact">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 14h44a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H30l-12 10V44h-8a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/><path d="M20 26h24M20 33h16"/></svg></div>
-          <div>
-            <div class="svc-phase">CONSULT — まず話す</div>
-            <div class="svc-title">「誰に頼めばいいか分からない」相談</div>
-            <div class="svc-price">¥0 <small>/ 初回無料</small></div>
-            <div class="svc-desc">EPC倒産・O&amp;M撤退・制度変更・災害対応・売却検討など。「こんなことを頼んでいいのか分からない」という段階から相談できます。</div>
-            <a href="mailto:info@fractal-green-project.jp" class="svc-badge">▶ メールで相談する</a>
-          </div>
+    <!-- ① 発電所の管理と工事 -->
+    <div class="svc-group rv rv-d1" id="svc-main">
+      <div class="svc-group-h"><span class="svc-group-n">1</span>発電所の管理と工事<small>（内容に応じてお見積りいたします）</small></div>
+      <div class="svc-main-grid">
+        <div class="svc-main">
+          <div class="svc-phase">O&amp;M — 保守管理</div>
+          <div class="svc-title">太陽光発電所の保守管理</div>
+          <div class="svc-desc">点検、駆け付け、除草、補修をまとめて対応します。点検や作業の結果は、写真付きで報告します。低圧・高圧とも対応します。</div>
         </div>
-        <div class="svc-card compact">
-          <div class="svc-ill" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="20"/><path d="M32 36V24M26 8h12M32 8v8M48 18l4-4"/></svg></div>
-          <div>
-            <div class="svc-phase">ENTRY — まず試す</div>
-            <div class="svc-title">無料60秒 盗難リスク診断</div>
-            <div class="svc-price">¥0 <small>/ 完全無料</small></div>
-            <div class="svc-desc">選択式8問で、盗難リスクのスコアと現状評価がすぐ表示されます。営業の連絡はありません。</div>
-            <a href="solar_diagnosis.html" class="svc-badge">▶ 今すぐ始める</a>
-          </div>
+        <div class="svc-main">
+          <div class="svc-phase">INSPECTION — 点検</div>
+          <div class="svc-title">定期点検・不具合の調査</div>
+          <div class="svc-desc">パネル、架台、接続箱、パワコン、配線などを点検します。不具合の原因を調べ、写真付きで報告します。</div>
+        </div>
+        <div class="svc-main">
+          <div class="svc-phase">WEEDING — 除草</div>
+          <div class="svc-title">除草・草木の管理</div>
+          <div class="svc-desc">発電や防犯に影響する草を、計画的に刈り払います。フェンス際の草の手入れも行い、作業の前後の写真を報告します。伐採や抜根は、ご相談ください。</div>
+        </div>
+        <div class="svc-main">
+          <div class="svc-phase">CIVIL — 土木工事</div>
+          <div class="svc-title">土木工事</div>
+          <div class="svc-desc">小規模な造成工事、フェンス工事、排水工事などに対応します。そのほかの土木工事も、ご相談ください。</div>
         </div>
       </div>
+      <p class="svc-main-act"><a href="mailto:info@fractal-green-project.jp?subject=%E7%AE%A1%E7%90%86%E3%83%BB%E5%B7%A5%E4%BA%8B%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="svc-badge">▶ 管理・工事の相談をする</a></p>
     </div>
 
     <!-- ② 日常の見守り・管理 -->
     <div class="svc-group rv rv-d1">
-      <div class="svc-group-h"><span class="svc-group-n">2</span>日常の見守り・管理<small>（年間・月額の契約）</small></div>
-      <div class="svc-grid">
+      <div class="svc-group-h"><span class="svc-group-n">2</span>日常の見守り・管理<small>（年間の契約）</small></div>
+      <div class="svc-grid svc-grid-single">
         <div class="svc-card lead has-photo" id="svc-watch">
           <img class="svc-photo" style="object-position: 40% 45%;" src="img/svc-patrol.jpg" alt="留め金具が外され、こじ開けられたフェンス" loading="lazy" width="800" height="450">
           <div class="svc-body">
             <div class="svc-phase">WATCH — 巡回</div>
             <div class="svc-title">巡回（見守り会員）</div>
-            <div class="svc-price">¥36,000〜 <small>/ 年（年6回）・¥60,000 / 年（年12回）／低圧1区画。高圧・複数区画は個別見積</small></div>
-            <div class="svc-desc">田川市から半径50km圏内の発電所が対象です（低圧・高圧とも。20km圏内は料金表どおり、20〜50kmは1回3,000円の出張加算）。フェンスの周り、侵入の痕跡、雑草の茂り具合、異変を外から一周して見回り、巡回した日のうちに写真で報告します。異常があればその場でお電話します。雑草が茂るとフェンス際が死角になり、侵入しやすく痕跡も見つけにくくなります。保守契約の点検は年1〜2回が一般的ですが、巡回は防犯と雑草に絞って、こまめに見ます。会員の方は、大雨・台風の後の確認や発電停止などのスポット対応を1回15,000円（低圧1区画）でお受けします。同じ地域に複数の区画をお持ちの場合はご相談ください。</div>
+            <div class="svc-price">¥36,000〜 <small>/ 年（年6回）・¥60,000 / 年（年12回）／低圧1区画。高圧・複数区画はお見積り</small></div>
+            <div class="svc-desc">フェンスの周り、侵入の痕跡、雑草の茂り具合などを外から一周して確認し、結果を写真で報告します。異常があれば、その場でお電話します。対象は田川市から半径50km圏内です（20〜50kmは1回3,000円の出張加算）。会員の方は、大雨・台風の後の確認などのスポット対応を、1回15,000円（低圧1区画）でお受けします。</div>
             <span class="svc-badge">年間契約</span>
-            <a href="report_sample.html#watch" class="svc-badge">報告サンプルを見る →</a>
-          </div>
-        </div>
-        <div class="svc-card has-photo">
-          <!-- Illustration: Toms Stals on Unsplash (https://unsplash.com/photos/OX5uCTs7pKc), Unsplash License -->
-          <img class="svc-photo svc-photo-illust" src="img/svc-advisory.jpg" alt="発電データを確認するイメージ" loading="lazy" width="800" height="450">
-          <div class="svc-body">
-            <div class="svc-phase">ONGOING — 継続管理</div>
-            <div class="svc-title">定期モニタリング顧問契約</div>
-            <div class="svc-price">¥30,000〜 <small>/ 月</small></div>
-            <div class="svc-desc">発電データの分析と、O&amp;M業者の報告書の第三者チェック、複数の発電所のまとめ。管理は業者に任せたまま、独立した「見張り役」になります。全国対応（遠隔が中心）。</div>
-            <span class="svc-badge">月次継続</span>
+            <a href="report_sample.html#watch" class="svc-badge">報告書サンプルを見る →</a>
           </div>
         </div>
       </div>
@@ -1005,11 +1096,11 @@ footer {
           <img class="svc-photo" src="img/svc-spot.jpg" alt="機器の中のケーブル引き込み部" loading="lazy" width="800" height="450">
           <div class="svc-body">
             <div class="svc-phase">FIELD — スポット対応</div>
-            <div class="svc-title">スポット対応（発電停止・通信異常の駆けつけ）</div>
+            <div class="svc-title">スポット対応（発電停止・通信異常の駆け付け）</div>
             <div class="svc-price">¥20,000〜 <small>/ 1回（田川市から20km圏内。20〜50kmは+5,000円、それより遠方は交通費実費）</small></div>
-            <div class="svc-desc">監視のアラート、監視の途絶え、売電量の急な低下を現地で確かめます。パワコン・通信機器の確認と再起動、原因の特定まで行い、写真付きで報告します。田川市から半径50km圏内なら最短当日。大雨・台風の後の確認もお受けします。巡回の会員は1回15,000円（低圧1区画）。部品交換が必要な場合は、内容と費用を先にお伝えします。機器で利益は取りません。</div>
-            <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="svc-badge">▶ 駆けつけを依頼する</a>
-            <a href="report_sample.html#dispatch" class="svc-badge">報告サンプルを見る →</a>
+            <div class="svc-desc">監視のアラート、監視の途絶え、売電量の急な低下を現地で確かめます。パワコン・通信機器の確認と再起動、原因の特定まで行い、写真付きで報告します。田川市から半径50km圏内なら最短当日。大雨・台風の後の確認もお受けします。</div>
+            <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E4%BB%98%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="svc-badge">▶ 駆け付けを依頼する</a>
+            <a href="report_sample.html#dispatch" class="svc-badge">報告書サンプルを見る →</a>
           </div>
         </div>
         <div class="svc-card has-photo">
@@ -1018,19 +1109,19 @@ footer {
             <div class="svc-phase">CORE — 現地調査</div>
             <div class="svc-title">安全基準適合調査レポート</div>
             <div class="svc-price">¥50,000〜 <small>/ 1案件</small></div>
-            <div class="svc-desc">現地目視・写真・データ分析による第三者評価レポート。盗難リスク・設備劣化・O&amp;M品質を数値化し、保険会社・金融機関への提出にも使えます。</div>
+            <div class="svc-desc">現地目視・写真・データ分析による調査レポート。盗難リスク、設備の劣化、管理の記録の状況を、写真と記録でお伝えします。保険会社・金融機関への提出にも使えます。</div>
             <a href="survey_detail.html" class="svc-badge">詳細・お申し込み →</a>
-            <a href="report_sample.html#survey" class="svc-badge">報告サンプルを見る →</a>
+            <a href="report_sample.html#survey" class="svc-badge">報告書サンプルを見る →</a>
           </div>
         </div>
         <div class="svc-card has-photo">
           <img class="svc-photo" src="img/svc-exit.jpg" alt="野立ての太陽光発電所" loading="lazy" width="800" height="450">
           <div class="svc-body">
-            <div class="svc-phase">EXIT — 出口対応</div>
-            <div class="svc-title">売却・融資・承継の評価</div>
-            <div class="svc-price">¥200,000〜 <small>/ 案件</small></div>
-            <div class="svc-desc">FIT終了・売却・リファイナンス・相続の際の第三者評価レポート。買い手・銀行・税理士への説明資料として使えます。</div>
-            <span class="svc-badge">要相談</span>
+            <div class="svc-phase">EXIT — 売却・融資・相続の前に</div>
+            <div class="svc-title">発電所の状態の評価（売却をお考えの方へ）</div>
+            <div class="svc-price">お問い合わせください <small>/ 内容に応じてお見積りいたします</small></div>
+            <div class="svc-desc">発電所の売却・融資・相続をお考えの方へ。現地での確認と記録をもとに、発電量の傾向、設備の劣化、修繕が必要な箇所と費用の見込みを、報告書にまとめます。買い手・銀行・税理士への説明資料としてお使いいただけます。価格の査定や、売買の仲介・手続の代行は行いません。</div>
+            <a href="mailto:info@fractal-green-project.jp?subject=%E5%A3%B2%E5%8D%B4%E3%83%BB%E8%9E%8D%E8%B3%87%E3%83%BB%E7%9B%B8%E7%B6%9A%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="svc-badge">▶ メールで問い合わせる</a>
           </div>
         </div>
       </div>
@@ -1038,101 +1129,71 @@ footer {
   </div>
 </section>
 
-<!-- ░░░ CREDENTIALS ░░░ -->
-<section class="creds sec">
+<!-- ░░░ 対応してきた内容 ░░░ -->
+<section class="works sec" id="works">
   <div class="wrap">
     <div class="rv">
-      <div class="sec-tag">
-        <div class="sec-tag-line"></div>
-        <span class="sec-tag-text">Credentials</span>
-      </div>
+      <div class="sec-tag"><div class="sec-tag-line"></div><span class="sec-tag-text">Track Record</span></div>
       <div class="gold-rule"></div>
-      <h2 class="sec-h2">資格と現場経験</h2>
+      <h2 class="sec-h2">これまでに対応してきた内容</h2>
     </div>
-    <div class="creds-grid rv rv-d1">
-      <ul class="creds-list">
-        <li class="creds-item"><div class="creds-dot"></div>第一種電気工事士</li>
-        <li class="creds-item"><div class="creds-dot"></div>1級電気工事施工管理技士補</li>
-        <li class="creds-item"><div class="creds-dot"></div>1級土木施工管理技士</li>
-        <li class="creds-item"><div class="creds-dot"></div>登録電気工事業者</li>
-        <li class="creds-item"><div class="creds-dot"></div>所在地：福岡県田川市猪国2559（いいかねPalette内）</li>
-        <li class="creds-item"><div class="creds-dot"></div>Mail：info@fractal-green-project.jp</li>
-      </ul>
-      <div class="exp-panel">
-        <div class="exp-tag">FIELD EXPERIENCE</div>
-        <div class="exp-row">
-          <div class="exp-y">8</div>
-          <div class="exp-detail">年間のO&M（運営管理）経験<br>盗難対応・災害復旧・緊急点検を含む</div>
-        </div>
-        <div class="exp-rule"></div>
-        <div class="exp-row">
-          <div class="exp-y">3</div>
-          <div class="exp-detail">年間のEPC（設計・施工）経験<br>施工管理・設計業務を担当</div>
-        </div>
-        <div class="exp-rule"></div>
-        <div class="exp-note">ケーブル盗難連続7回対応・土砂災害復旧・台風水没復旧など、通常のO&Mでは経験できない現場を複数経験（いずれも独立前の勤務時の経験）。</div>
+    <div class="work-total rv rv-d1"><b>200案件以上</b><span>これまでに対応してきた案件（前職からの累計）</span></div>
+    <div class="works-grid rv rv-d1">
+      <div class="work-col">
+        <div class="work-h">継続して行っていること<small>（2026年11月現在）</small></div>
+        <div class="work-num"><b>20区画</b><span>低圧発電所の点検</span></div>
+        <div class="work-num"><b>約2MW</b><span>高圧発電所（合計）のO&amp;M</span></div>
+        <ul class="work-list"><li>計画的な除草</li></ul>
+      </div>
+      <div class="work-col">
+        <div class="work-h">防犯のための工事<small>（これまでの対応）</small></div>
+        <ul class="work-list">
+          <li>防犯対策工事（ケーブルの埋設）</li>
+          <li>常夜灯の設置工事</li>
+          <li>監視カメラの設置工事</li>
+        </ul>
+      </div>
+      <div class="work-col">
+        <div class="work-h">設備の復旧・交換<small>（これまでの対応）</small></div>
+        <ul class="work-list">
+          <li>パネル交換</li>
+          <li>PCS（パワーコンディショナ）の故障交換</li>
+          <li>法面の復旧工事</li>
+        </ul>
       </div>
     </div>
+    <p class="work-note">お客様の名前・場所は、守秘のため、掲載していません。</p>
   </div>
 </section>
 
-<!-- ░░░ FLOW ░░░ -->
-<section class="flow sec" id="flow">
+<!-- ░░░ 協力会社様へ ░░░ -->
+<section class="partner" id="partner">
   <div class="wrap">
-    <div class="rv" style="text-align:center">
-      <div class="sec-tag" style="justify-content:center">
-        <div class="sec-tag-line"></div>
-        <span class="sec-tag-text">How It Works</span>
-        <div class="sec-tag-line"></div>
+    <div class="partner-in rv">
+      <div>
+        <div class="partner-h">O&amp;M会社・EPC・施工会社の皆様へ</div>
+        <p class="partner-p">電気点検、電気工事、駆け付け、除草、土木工事を、協力会社としてお手伝いします。田川市を拠点に、まずは地元の田川・筑豊の発電所からお役に立ちたいと考えています。</p>
+        <p class="partner-p" style="margin-top:10px;">ご不明な点は、お気軽にご質問ください。</p>
+        <p class="partner-p" style="margin-top:10px;"><a href="about.html#creds" style="color:var(--fg-mid);">保有資格・登録の一覧は、こちら →</a></p>
       </div>
-      <div class="gold-rule" style="margin:14px auto 0"></div>
-      <h2 class="sec-h2" style="margin-top:16px">ご利用の流れ</h2>
-    </div>
-    <div class="flow-steps rv rv-d1">
-      <div class="flow-connector"></div>
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-t">無料診断を受ける</div>
-        <div class="flow-b">60秒の選択式診断でリスクスコアを確認。営業の連絡はありません。</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-t">無料相談（30分）</div>
-        <div class="flow-b">診断結果をもとにオンラインで現状確認。現地調査が必要かを判断します。</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-t">現地調査・レポート</div>
-        <div class="flow-b">発電所へ訪問し写真記録・データ分析を実施。正式レポートを発行します。</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-t">改善・継続管理</div>
-        <div class="flow-b">改善提案の実施後、見守り会員や顧問契約で継続的にサポートします。発電が止まったときは、診断を飛ばして直接ご連絡ください。</div>
-      </div>
+      <div><a href="mailto:info@fractal-green-project.jp?subject=%E5%8D%94%E5%8A%9B%E4%BC%9A%E7%A4%BE%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="btn-gold">▶ 協力会社としてのご相談</a></div>
     </div>
   </div>
 </section>
-
 <!-- ░░░ CTA ░░░ -->
 <section class="cta" id="diagnosis">
   <div class="wrap">
     <div class="cta-inner rv">
       <div class="sec-tag" style="justify-content:center">
         <div class="sec-tag-line"></div>
-        <span class="sec-tag-text">Free Diagnosis</span>
+        <span class="sec-tag-text">Contact</span>
         <div class="sec-tag-line"></div>
       </div>
-      <h2 class="cta-h">まず、あなたの発電所の<br>本当の状態を確認してください。</h2>
-      <p class="cta-sub">60秒・選択式・完全無料。営業の連絡は一切ありません。</p>
+      <h2 class="cta-h">発電所の管理のこと、<br>まずはご相談ください。</h2>
       <div class="cta-box">
-        <a href="solar_diagnosis.html" class="btn-gold">▶ 無料60秒 盗難リスク診断を始める</a>
-        <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E3%81%A4%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-ghost" style="margin-bottom:24px;">発電・通信が止まったら：駆けつけを依頼する →</a>
-        <div class="cta-checklist">
-          <div class="cta-check">選択式8問・記述不要</div>
-          <div class="cta-check">結果は即時表示</div>
-          <div class="cta-check">工事・機器の売り込みは一切なし</div>
-        </div>
+        <a href="mailto:info@fractal-green-project.jp?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87" class="btn-gold">▶ 無料で相談する</a>
+        <a href="mailto:info@fractal-green-project.jp?subject=%E9%A7%86%E3%81%91%E4%BB%98%E3%81%91%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%9D%E9%A0%BC" class="btn-ghost" style="margin-bottom:18px;">発電・通信が止まったら：駆け付けを依頼する →</a>
+        <p class="cta-diag"><a href="solar_diagnosis.html">無料60秒 盗難リスク診断 →</a></p>
         <div class="cta-contact">
           個別相談・お問い合わせ<br>
           <a href="mailto:info@fractal-green-project.jp">info@fractal-green-project.jp</a>
@@ -1144,17 +1205,19 @@ footer {
 
 <!-- ░░░ FOOTER ░░░ -->
 <footer>
+  <div class="ft-nav">
+    <a href="about.html">事業概要</a><a href="#doors">お困りごと</a><a href="#area">対応エリア</a><a href="#services">サービスと料金</a><a href="#thought">企業理念</a><a href="report_sample.html">報告書サンプル</a><a href="#partner">協力会社様へ</a><a href="privacy.html">プライバシーポリシー</a>
+  </div>
   <div class="ft-logo">フラクタル・<span>グリーン</span><small>FRACTAL GREEN</small></div>
   <div class="ft-info">
     代表 酒井 直樹　福岡県田川市猪国2559（いいかねPalette内）<br>
     info@fractal-green-project.jp<br>
-    <a href="privacy.html" style="color:inherit;">プライバシーポリシー</a>　© 2025 フラクタル・グリーン. All rights reserved.
+    © 2025 フラクタル・グリーン. All rights reserved.
   </div>
   <div class="ft-social">
     <a href="https://x.com/JiuShu99749" target="_blank" rel="noopener">X（旧Twitter）で現場の話を発信中 →</a>
   </div>
 </footer>
-
 <script>
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
